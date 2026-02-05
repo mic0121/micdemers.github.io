@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mentaliste corporatif | Michael Demers</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Mentaliste professionnel pour événements corporatifs, privés et festivals. Une expérience élégante et inoubliable.">
+  <meta name="keywords" content="mentaliste, mentalisme corporatif, animation événementielle, spectacle mentaliste">
+  <meta name="author" content="Michael Demers">
+
+  <!-- Google -->
+  <meta property="og:title" content="Michael Demers – Mentaliste">
+  <meta property="og:description" content="L’art du mentalisme au service de vos événements.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://micdemers.com">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="hero-content fade-in">
+    <h1>MICHAEL DEMERS</h1>
+    <p class="subtitle">Mentaliste · Événementiel & Corporate</p>
+    <p class="tagline">Prêt à rendre votre événement inoubliable ?</p>
+
+    <div class="cta">
+      <a href="#contact" class="btn-primary">Demander une soumission</a>
+      <a href="about.html" class="btn-secondary">À propos</a>
+    </div>
+  </div>
+
+  <!-- Réseaux sociaux visibles mais discrets -->
+  <div class="social-fixed">
+    <a href="https://www.instagram.com/michaeldemers_/" target="_blank">IG</a>
+    <a href="https://www.facebook.com/michaelmagicien" target="_blank">FB</a>
+    <a href="https://www.youtube.com/@MichaelDemers52" target="_blank">YT</a>
+    <a href="https://www.tiktok.com/@michael.demers52" target="_blank">TT</a>
+  </div>
+</header>
+
+<section class="services reveal">
+  <h2>Services</h2>
+  <div class="cards">
+    <div class="card">Événements corporatifs</div>
+    <div class="card">Événements privés</div>
+    <div class="card">Festivals & spectacles</div>
+  </div>
+</section>
+
+<section class="media reveal">
+  <h2>Médias</h2>
+  <p>Photos et vidéos à venir</p>
+</section>
+
+<section id="contact" class="contact reveal">
+  <h2>Demande de soumission</h2>
+
+  <form action="https://formsubmit.co/contact@micdemers.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Nouvelle soumission – micdemers.com">
+
+    <input type="text" name="Nom" placeholder="Nom" required>
+    <input type="email" name="Email" placeholder="Email" required>
+    <input type="text" name="Téléphone" placeholder="Téléphone">
+    <input type="text" name="Type d’événement" placeholder="Type d’événement">
+    <textarea name="Message" placeholder="Décrivez votre événement" required></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 Michael Demers · Tous droits réservés
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
