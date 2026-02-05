@@ -15,16 +15,15 @@ body {
   justify-content: center;
   text-align: center;
   color: #ffffff;
-  overflow: hidden;
-  
-  /* L'IMAGE DE FOND AVEC LES MAJUSCULES EXACTES */
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-              url('IMG_6112_pp.JPG') no-repeat center center;
+  /* On utilise background-image pour être plus précis */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('IMG_6112_pp.JPG');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-
 .hero-content {
-  z-index: 2;
+  z-index: 5; /* Très important pour passer devant l'image */
+  position: relative;
 }
 
 h1 {
