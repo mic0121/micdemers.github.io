@@ -61,20 +61,26 @@ h1 {
   display: inline-block;
 }
 
+/* Style des icônes réseaux sociaux */
 .social-fixed {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 25px;
 }
 
 .social-fixed a {
-  color: gold;
-  text-decoration: none;
-  font-size: .9rem;
+  color: #ffffff;
+  font-size: 1.5rem; /* Taille de l'icône */
+  transition: all 0.3s ease;
+  opacity: 0.8;
 }
 
+.social-fixed a:hover {
+  color: #d4af37; /* Or champagne au survol */
+  transform: scale(1.2); /* Petit effet de zoom */
+  opacity: 1;
+}
 section {
   padding: 100px 10%;
 }
