@@ -61,27 +61,41 @@ h1 {
   display: inline-block;
 }
 
-/* Style des icônes réseaux sociaux */
+/* Positionnement des réseaux en haut à droite */
 .social-fixed {
+  position: absolute; /* Il se place par rapport au header */
+  top: 20px;          /* Distance du haut */
+  right: 20px;        /* Distance de la droite */
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 25px;
+  gap: 15px;          /* Espace entre les icônes */
+  z-index: 100;       /* Pour qu'il reste au-dessus du reste */
 }
 
 .social-fixed a {
   color: #ffffff;
-  font-size: 1.5rem; /* Taille de l'icône */
+  font-size: 1.2rem;  /* Un peu plus petit pour le coin */
   transition: all 0.3s ease;
-  opacity: 0.8;
+  opacity: 0.7;
+  text-decoration: none;
 }
 
 .social-fixed a:hover {
-  color: #d4af37; /* Or champagne au survol */
-  transform: scale(1.2); /* Petit effet de zoom */
+  color: #d4af37;
+  transform: translateY(-3px); /* L'animation vers le haut que tu aimes */
   opacity: 1;
 }
-section {
+
+/* Sur mobile, on les centre pour éviter qu'ils ne cachent le texte */
+@media (max-width: 600px) {
+  .social-fixed {
+    position: relative;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+.section {
   padding: 100px 10%;
 }
 
