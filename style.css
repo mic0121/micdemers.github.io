@@ -1,3 +1,6 @@
+/* ==========================================
+   1. BASES & TYPOGRAPHIE
+   ========================================== */
 body {
   margin: 0;
   font-family: 'Helvetica Neue', sans-serif;
@@ -6,8 +9,11 @@ body {
   scroll-behavior: smooth;
 }
 
+/* ==========================================
+   2. HEADER & HERO SECTION
+   ========================================== */
 .hero {
-  position: relative;
+  position: relative !important;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -15,14 +21,14 @@ body {
   justify-content: center;
   text-align: center;
   color: #ffffff;
-  /* On utilise background-image pour être plus précis */
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('IMG_6112_pp.JPG');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .hero-content {
-  z-index: 5; /* Très important pour passer devant l'image */
+  z-index: 5;
   position: relative;
 }
 
@@ -44,6 +50,51 @@ h1 {
   opacity: 0.9;
 }
 
+/* --- LOGO (Coin gauche) --- */
+.main-logo {
+  position: absolute !important;
+  top: 25px !important;
+  left: 25px !important;
+  width: 80px !important;
+  height: auto !important;
+  z-index: 1000 !important;
+  margin: 0 !important;
+  transform: none !important;
+  display: block !important;
+  transition: opacity 0.3s ease;
+}
+
+.main-logo:hover {
+  opacity: 0.8;
+}
+
+/* --- RÉSEAUX SOCIAUX (Coin droit) --- */
+.social-fixed {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 100;
+}
+
+.social-fixed a {
+  color: #ffffff;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.social-fixed a:hover {
+  color: #d4af37;
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+/* ==========================================
+   3. BOUTONS & ÉLÉMENTS UI
+   ========================================== */
 .btn-primary {
   border: 1px solid gold;
   color: gold;
@@ -61,54 +112,23 @@ h1 {
   display: inline-block;
 }
 
-/* Positionnement des réseaux en haut à droite */
-.social-fixed {
-  position: absolute; /* Il se place par rapport au header */
-  top: 20px;          /* Distance du haut */
-  right: 20px;        /* Distance de la droite */
-  display: flex;
-  gap: 15px;          /* Espace entre les icônes */
-  z-index: 100;       /* Pour qu'il reste au-dessus du reste */
-}
-
-.social-fixed a {
-  color: #ffffff;
-  font-size: 1.2rem;  /* Un peu plus petit pour le coin */
-  transition: all 0.3s ease;
-  opacity: 0.7;
-  text-decoration: none;
-}
-
-.social-fixed a:hover {
-  color: #d4af37;
-  transform: translateY(-3px); /* L'animation vers le haut que tu aimes */
-  opacity: 1;
-}
-
-/* Sur mobile, on les centre pour éviter qu'ils ne cachent le texte */
-@media (max-width: 600px) {
-  .social-fixed {
-    position: relative; /* On enlève le positionnement fixe pour le mobile */
-    top: 0;
-    right: 0;
-    justify-content: center;
-    margin: 20px 0; /* Ajoute de l'espace au-dessus et en-dessous */
-    order: -1; /* Force les réseaux à apparaître AVANT le titre dans le flux */
-  }
-
-  .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-}
+/* ==========================================
+   4. SECTIONS & GRILLES
+   ========================================== */
 .section {
   padding: 100px 10%;
 }
 
-/* --- SECTION SERVICES (STYLE KEVIN HAMDAN) --- */
+.section-title {
+  text-align: center;
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+/* --- SERVICES (Cards) --- */
 .services .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -122,7 +142,7 @@ h1 {
   height: 450px;
   background-size: cover;
   background-position: center;
-  background-color: #000; /* Fond de secours */
+  background-color: #000;
   border-radius: 4px;
   overflow: hidden;
   display: flex;
@@ -138,7 +158,6 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Dégradé léger : noir uniquement en bas pour le texte, transparent en haut */
   background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
   transition: all 0.4s ease;
   z-index: 1;
@@ -166,13 +185,11 @@ h1 {
   transition: all 0.4s ease;
 }
 
-/* Effets de survol */
 .card:hover {
   transform: scale(1.02);
 }
 
 .card:hover .card-overlay {
-  /* Teinte dorée subtile au survol */
   background: linear-gradient(to top, rgba(212, 175, 55, 0.3) 0%, rgba(0,0,0,0.2) 100%);
 }
 
@@ -180,6 +197,8 @@ h1 {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* --- GALLERY --- */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -193,29 +212,26 @@ h1 {
   transition: transform 0.3s ease;
 }
 
-/* Animations */
-.fade-in {
-  animation: fadeIn 1.5s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
+/* ==========================================
+   5. FORMULAIRE DE CONTACT
+   ========================================== */
 .form-container {
-  max-width: 500px; /* Empêche le formulaire d'être trop large */
-  margin: 0 auto; /* Centre le formulaire */
+  width: 90%;
+  max-width: 550px;
+  margin: 0 auto;
   padding: 30px;
 }
 
 .vertical-form {
   display: flex;
-  flex-direction: column; /* Empile les champs verticalement */
-  gap: 18px; /* Espace entre les champs */
+  flex-direction: column;
+  gap: 18px;
 }
 
 .vertical-form input,
-.vertical-form textarea {
+.vertical-form textarea,
+.form-group input,
+.form-group textarea {
   width: 100%;
   padding: 14px;
   border: 1px solid #ccc;
@@ -224,55 +240,62 @@ h1 {
   font-size: 16px;
 }
 
-.vertical-form textarea {
-  height: 140px;
-  resize: vertical;
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.vertical-form button {
-  padding: 16px;
-  background-color: #111;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+.form-group label {
+  color: #fff;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.btn-submit {
+  width: 100%;
+  background: transparent;
+  color: #d4af37;
+  border: 1px solid #d4af37;
+  padding: 15px;
+  text-transform: uppercase;
   font-weight: bold;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  transition: background 0.3s ease;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.vertical-form button:hover {
-  background-color: #000;
+.btn-submit:hover {
+  background: #d4af37;
+  color: #1a1a1a;
 }
-/* PAGE À PROPOS */
 
+/* ==========================================
+   6. PAGE À PROPOS
+   ========================================== */
 .about-page {
   max-width: 900px;
   margin: 80px auto;
   padding: 0 20px;
   text-align: center;
+  animation: fadeUp 1s ease forwards;
 }
 
-/* PHOTO */
 .about-page img {
-  width: 320px;            /* Taille élégante */
+  width: 320px;
   max-width: 90%;
-  border-radius: 12px;     /* Luxe discret */
+  border-radius: 12px;
   margin-bottom: 40px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
 
-/* TEXTE */
 .about-page p {
-  font-size: 1.15rem;      /* Plus lisible */
+  font-size: 1.15rem;
   line-height: 1.8;
   max-width: 700px;
   margin: 0 auto 30px auto;
-  color: #eaeaea;          /* Plus doux que blanc pur */
+  color: #eaeaea;
 }
 
-/* HEADER */
 .simple-header {
   display: flex;
   justify-content: space-between;
@@ -295,7 +318,9 @@ h1 {
   color: white;
 }
 
-/* FOOTER */
+/* ==========================================
+   7. FOOTER & ANIMATIONS
+   ========================================== */
 footer {
   margin-top: 100px;
   padding: 30px 0;
@@ -303,8 +328,14 @@ footer {
   font-size: 0.9rem;
   color: #777;
 }
-.about-page {
-  animation: fadeUp 1s ease forwards;
+
+.fade-in {
+  animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 @keyframes fadeUp {
@@ -316,81 +347,28 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
-/* Style du titre de la section */
-.section-title {
-  text-align: center;
-  color: #d4af37;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 40px;
-  width: 100%;
 }
 
-/* Container du formulaire (Centrage) */
-.form-container {
-  width: 90%;          /* Prend 90% de large sur mobile */
-  max-width: 550px;    /* Ne dépasse pas 550px sur ordi */
-  margin: 0 auto;      /* Centre le bloc sur la page */
-}
-
-/* Espacement des champs */
-.form-group {
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  color: #fff;
-  margin-bottom: 8px;
-  font-size: 0.9rem;
-}
-
-/* Style du bouton envoyer */
-.btn-submit {
-  width: 100%;
-  background: transparent;
-  color: #d4af37;
-  border: 1px solid #d4af37;
-  padding: 15px;
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.btn-submit:hover {
-  background: #d4af37;
-  color: #1a1a1a;
-}
-/* --- LOGO CENTRAL --- */
-.main-logo {
-    position: absolute !important;
-    top: 25px !important;
-    left: 25px !important;
-    width: 80px !important; /* Taille ajustée pour être élégante mais visible */
-    height: auto !important;
-    z-index: 1000 !important;
-    
-    /* Ces 3 lignes annulent le centrage hérité du texte */
-    margin: 0 !important;
-    transform: none !important;
-    display: block !important;
-}
-
-/* On s'assure que le container ne le bloque pas */
-.hero {
-    position: relative !important;
-}
-.main-logo:hover {
-  opacity: 0.8;       /* Petit effet visuel au survol */
-}
-
-/* Ajustement pour mobile */
+/* ==========================================
+   8. RESPONSIVE (MOBILE)
+   ========================================== */
 @media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+  }
+
   .main-logo {
-    width: 50px;      /* Encore plus petit sur téléphone */
-    top: 15px;
-    left: 15px;
+    width: 50px !important;
+    top: 15px !important;
+    left: 15px !important;
+  }
+
+  .social-fixed {
+    position: relative;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    margin: 20px 0;
+    order: -1;
   }
 }
