@@ -365,6 +365,8 @@ footer {
 }
 /* --- LOGO CENTRAL --- */
 .main-logo {
+  max-width: 140px; 
+  margin-bottom: -20px; /* Un chiffre négatif réduit l'espace sous le logo */
   display: block;
   margin: 0 auto 10px auto;
   width: 150px;             /* Largeur fixe */
