@@ -88,11 +88,20 @@ h1 {
 /* Sur mobile, on les centre pour éviter qu'ils ne cachent le texte */
 @media (max-width: 600px) {
   .social-fixed {
-    position: relative;
+    position: relative; /* On enlève le positionnement fixe pour le mobile */
     top: 0;
     right: 0;
     justify-content: center;
-    margin-bottom: 20px;
+    margin: 20px 0; /* Ajoute de l'espace au-dessus et en-dessous */
+    order: -1; /* Force les réseaux à apparaître AVANT le titre dans le flux */
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 }
 .section {
