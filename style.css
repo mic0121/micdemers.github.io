@@ -368,23 +368,18 @@ footer {
 .main-logo {
   position: absolute;
   top: 25px;         /* Distance du haut */
-  right: 30px;       /* Distance de la droite (change "right" par "left" pour mettre à gauche) */
-  width: 80px;       /* Plus petit comme tu l'as demandé */
+  left: 30px;        /* Distance de la GAUCHE */
+  width: 80px;       /* Taille discrète et élégante */
   height: auto;
-  z-index: 100;      /* Passe par-dessus tout */
+  z-index: 100;      /* Assure que le logo passe devant l'image de fond */
   transition: all 0.3s ease;
 }
 
-/* On s'assure que le header est la référence pour le logo */
-.hero {
-  position: relative;
-}
-
-/* Sur mobile, on le réduit encore un peu et on le centre si nécessaire */
+/* Sur mobile, on réduit pour ne pas encombrer l'écran */
 @media (max-width: 600px) {
   .main-logo {
-    width: 60px;
+    width: 65px;
     top: 15px;
-    right: 20px;
+    left: 15px;
   }
 }
