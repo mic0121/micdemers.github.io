@@ -363,20 +363,23 @@ footer {
   background: #d4af37;
   color: #1a1a1a;
 }
+/* --- LOGO CENTRAL --- */
 .main-logo {
-  width: 150px;       /* Ajuste la taille selon tes goûts */
-  height: auto;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); /* Petit éclat or discret */
-  transition: transform 0.3s ease;
+  display: block;           /* Force le logo à être sur sa propre ligne */
+  margin: 0 auto 20px auto; /* Centre horizontalement et met 20px d'espace en bas */
+  width: 180px;             /* Largeur fixe pour éviter qu'il n'écrase tout */
+  height: auto;             /* Garde les bonnes proportions */
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2)); /* Lueur dorée légère */
 }
 
-.main-logo:hover {
-  transform: scale(1.05); /* Petit effet de zoom au survol */
-}
-
+/* --- AJUSTEMENT MOBILE --- */
 @media (max-width: 600px) {
   .main-logo {
-    width: 120px; /* Un peu plus petit sur mobile */
+    width: 130px;           /* Plus petit sur téléphone */
+    margin-bottom: 15px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;        /* Réduit un peu le nom s'il prend trop de place */
   }
 }
