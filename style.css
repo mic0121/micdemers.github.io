@@ -363,3 +363,20 @@ footer {
   background: #d4af37;
   color: #1a1a1a;
 }
+.main-logo {
+  width: 150px;       /* Ajuste la taille selon tes goûts */
+  height: auto;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); /* Petit éclat or discret */
+  transition: transform 0.3s ease;
+}
+
+.main-logo:hover {
+  transform: scale(1.05); /* Petit effet de zoom au survol */
+}
+
+@media (max-width: 600px) {
+  .main-logo {
+    width: 120px; /* Un peu plus petit sur mobile */
+  }
+}
