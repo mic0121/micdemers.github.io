@@ -365,14 +365,22 @@ footer {
 }
 /* --- LOGO CENTRAL --- */
 .main-logo {
-  position: absolute !important; /* Force la sortie du flux central */
-  top: 20px !important;          /* Force la distance du haut */
-  left: 20px !important;         /* Force la distance de la gauche */
-  width: 60px !important;        /* Taille que tu voulais */
-  height: auto !important;
-  z-index: 9999 !important;      /* S'assure qu'il est au-dessus de tout */
-  margin: 0 !important;          /* Supprime les marges de centrage auto */
-  transform: none !important;    /* Annule tout centrage par transformation */
+    position: absolute !important;
+    top: 25px !important;
+    left: 25px !important;
+    width: 80px !important; /* Taille ajustée pour être élégante mais visible */
+    height: auto !important;
+    z-index: 1000 !important;
+    
+    /* Ces 3 lignes annulent le centrage hérité du texte */
+    margin: 0 !important;
+    transform: none !important;
+    display: block !important;
+}
+
+/* On s'assure que le container ne le bloque pas */
+.hero {
+    position: relative !important;
 }
 .main-logo:hover {
   opacity: 0.8;       /* Petit effet visuel au survol */
