@@ -39,11 +39,10 @@ h1 {
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: gold;
-  margin-bottom: 5px;
-}
-
+    font-size: 1.2rem;
+    color: gold;
+    margin-bottom: 50px !important; /* On augmente l'espace ici pour remplacer la tagline */
+} 
 .tagline {
   font-size: 1.1rem;
   margin-top: 20px;    /* Espace au-dessus */
