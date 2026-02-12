@@ -17,18 +17,29 @@ body {
    ========================================== */
 
 .hero {
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    width: 100%;
+    /* C'est ici que ton image est appelée */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                url('images/IMG_6112_pp.JPG') no-repeat center center;
+    background-size: cover; /* L'image remplit l'espace sans se déformer */
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centre verticalement */
-    align-items: center;     /* Centre horizontalement */
-    height: 100vh;
-    padding-top: 80px;       /* Évite que le texte touche le menu en haut */
-}
-.hero-content {
-  z-index: 5;
-  position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: white;
 }
 
+.hero-content {
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem); /* S'adapte à la taille de l'écran */
+    letter-spacing: 5px;
+    margin: 0;
+}
 h1 {
   letter-spacing: 6px;
   font-size: 3rem;
