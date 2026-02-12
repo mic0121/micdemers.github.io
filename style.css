@@ -467,9 +467,11 @@ footer {
 /* --- MOBILE & HAMBURGER --- */
 @media (max-width: 768px) {
     .hamburger {
-        display: block;
-        cursor: pointer;
-    }
+    display: none; /* Caché par défaut sur ordi */
+    position: relative;
+    z-index: 3000 !important; /* Plus haut que le menu mobile (qui est à 2000) */
+    cursor: pointer;
+}
     .hamburger span {
         display: block;
         width: 25px;
@@ -564,4 +566,32 @@ footer {
         color: #d4af37;
         font-size: 1.8rem; /* Plus gros pour les pouces sur mobile */
     }
+}
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* On l'affiche sur mobile */
+    }
+
+    /* On s'assure que le menu mobile ne recouvre pas le bouton */
+    .nav-links {
+        z-index: 2500; 
+        /* ... reste de ton code ... */
+    }
+
+    /* Si le logo gêne, on réduit sa priorité quand le menu est ouvert */
+    .nav-links.active ~ .main-logo {
+        opacity: 0.3; /* Le logo devient discret quand on navigue */
+    }
+}
+/* Animation des barres en X */
+.hamburger.toggle span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.toggle span:nth-child(2) {
+    opacity: 0; /* La barre du milieu disparaît */
+}
+
+.hamburger.toggle span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
