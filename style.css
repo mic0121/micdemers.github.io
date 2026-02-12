@@ -40,7 +40,7 @@ h1 {
 
 .subtitle {
     font-size: 1.2rem;
-    color: gold;
+    color: #d4af37;
     margin-bottom: 50px !important; /* On augmente l'espace ici pour remplacer la tagline */
 } 
 .tagline {
@@ -96,14 +96,17 @@ h1 {
    3. BOUTONS & ÉLÉMENTS UI
    ========================================== */
 .btn-primary {
-  border: 1px solid gold;
-  color: gold;
+  border: 1px solid #d4af37;
+  color: #d4af37;
   padding: 12px 30px;
   text-decoration: none;
   margin-right: 10px;
   display: inline-block;
 }
-
+.btn-primary:hover {
+  background-color: #d4af37 !important;
+  color: #111 !important;
+}
 .btn-secondary {
   border: 1px solid #555;
   color: #aaa;
