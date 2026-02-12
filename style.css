@@ -46,7 +46,8 @@ h1 {
 
 .tagline {
   font-size: 1.1rem;
-  margin: 20px 0;
+  margin-top: 20px;    /* Espace au-dessus */
+  margin-bottom: 40px; /* ON AUGMENTE ICI : l'espace entre le texte et les boutons */
   opacity: 0.9;
 }
 
