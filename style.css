@@ -493,3 +493,25 @@ footer {
         font-size: 1.5rem;
     }
 }
+.social-divider {
+    text-align: center;
+    padding: 60px 0;
+    background: #0b0b0b;
+}
+.social-divider p {
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+}
+.social-icons-row a {
+    color: #d4af37;
+    font-size: 2rem;
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+.social-icons-row a:hover {
+    transform: scale(1.2);
+}
