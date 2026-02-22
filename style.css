@@ -595,3 +595,9 @@ footer {
 .hamburger.toggle span:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
 }
+/* Cache le logo sur les écrans de moins de 768px */
+@media screen and (max-width: 768px) {
+    .main-logo, .logo, .custom-logo-link { 
+        display: none !important;
+    }
+}
