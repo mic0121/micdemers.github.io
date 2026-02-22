@@ -626,3 +626,18 @@ footer {
         box-sizing: border-box !important; /* Force le calcul de largeur incluant les bordures */
     }
 }
+/* Grossir les icônes réseaux sociaux sur Ordinateur uniquement */
+@media (min-width: 1025px) {
+    .social-fixed a, 
+    .desktop-socials a, 
+    .social-icons-row a i {
+        font-size: 24px !important; /* Ajuste ce chiffre (ex: 26px ou 28px) selon tes préférences */
+        transition: transform 0.3s ease; /* Optionnel : rend le survol plus fluide */
+    }
+
+    /* Optionnel : petit effet au survol pour que ce soit pro */
+    .social-fixed a:hover, 
+    .desktop-socials a:hover {
+        transform: scale(1.1); 
+    }
+}
