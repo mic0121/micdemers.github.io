@@ -595,26 +595,20 @@ footer {
 .hamburger.toggle span:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
 }
-/* Cache le logo sur les écrans de moins de 768px */
 @media screen and (max-width: 768px) {
-    .main-logo, .logo, .custom-logo-link { 
+    /* Cible le logo de manière très large */
+    .site-branding, .navbar-brand, .header-logo, .custom-logo {
         display: none !important;
-    }
-}
-@media screen and (max-width: 768px) {
-    /* On réinitialise les marges et on centre le conteneur du formulaire */
-    form, .wpcf7, .gform_wrapper, .elementor-form {
-        margin-left: auto !important;
-        margin-right: auto !important;
-        padding-left: 15px !important;  /* Petite marge de sécurité sur les côtés */
-        padding-right: 15px !important;
-        width: 100% !important;        /* S'assure qu'il prend toute la largeur dispo */
-        max-width: 100% !important;
+        visibility: hidden !important;
     }
 
-    /* Centre aussi les champs à l'intérieur si nécessaire */
-    input, textarea, select {
+    /* Force le formulaire à ne plus avoir de décalage */
+    .wpcf7, .wpcf7-form, form, .elementor-form {
+        margin: 0 auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
         width: 100% !important;
-        box-sizing: border-box; /* Évite que le champ ne dépasse à cause du padding */
+        max-width: 100% !important;
+        display: block !important;
     }
 }
