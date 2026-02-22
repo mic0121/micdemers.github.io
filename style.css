@@ -595,3 +595,28 @@ footer {
 .hamburger.toggle span:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
 }
+/* Correction du formulaire sur mobile */
+@media (max-width: 768px) {
+    .form-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 15px !important;  /* Petit espace pour que ça ne colle pas au bord */
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
+        margin: 0 auto !important;
+    }
+
+    .vertical-form, .form-group {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .vertical-form input, 
+    .vertical-form textarea,
+    .form-group input,
+    .form-group textarea {
+        width: 100% !important;
+        box-sizing: border-box !important; /* Force le calcul de largeur incluant les bordures */
+    }
+}
