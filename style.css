@@ -59,19 +59,25 @@ h1 {
 }
 
 /* --- LOGO (Coin gauche) --- */
+
+/* --- LOGO : Gestion Ordi vs Mobile --- */
 .main-logo {
   position: absolute !important;
-  top: 25px !important;
+  top: 45px !important;  /* Ajusté pour ta bannière dorée */
   left: 25px !important;
   width: 120px !important;
   height: auto !important;
   z-index: 1000 !important;
-  margin: 0 !important;
-  transform: none !important;
-  display: block !important;
-  transition: opacity 0.3s ease;
+  display: block !important; /* Visible sur ordinateur */
 }
 
+/* LA BARRIÈRE MOBILE */
+@media (max-width: 768px) {
+  .main-logo {
+    display: none !important; /* Disparaît UNIQUEMENT sur mobile */
+    visibility: hidden !important;
+  }
+}
 .main-logo:hover {
   opacity: 0.8;
 }
@@ -618,22 +624,5 @@ footer {
     .form-group textarea {
         width: 100% !important;
         box-sizing: border-box !important; /* Force le calcul de largeur incluant les bordures */
-    }
-}
-/* Suppression radicale du logo sur mobile uniquement */
-@media screen and (max-width: 768px) {
-    .main-logo, 
-    img.main-logo, 
-    .hero .main-logo,
-    header .main-logo {
-        display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-    }
-
-    /* On s'assure que la barre de navigation ne garde pas d'espace vide à gauche */
-    .navbar {
-        justify-content: flex-end !important;
     }
 }
