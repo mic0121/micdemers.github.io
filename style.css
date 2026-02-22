@@ -620,15 +620,20 @@ footer {
         box-sizing: border-box !important; /* Force le calcul de largeur incluant les bordures */
     }
 }
-/* Faire disparaître le logo uniquement sur mobile */
-@media (max-width: 768px) {
-    .main-logo {
+/* Suppression radicale du logo sur mobile uniquement */
+@media screen and (max-width: 768px) {
+    .main-logo, 
+    img.main-logo, 
+    .hero .main-logo,
+    header .main-logo {
         display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
     }
-    
-    /* On recentre le bouton hamburger ou on ajuste l'espace si besoin */
+
+    /* On s'assure que la barre de navigation ne garde pas d'espace vide à gauche */
     .navbar {
-        justify-content: flex-end !important; /* Pousse le menu hamburger à droite */
-        top: 45px !important;
+        justify-content: flex-end !important;
     }
 }
