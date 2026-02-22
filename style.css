@@ -620,3 +620,24 @@ footer {
         box-sizing: border-box !important; /* Force le calcul de largeur incluant les bordures */
     }
 }
+/* Alignement Logo et Hamburger sur Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        display: flex !important;
+        flex-direction: row !important; /* Force l'alignement côte à côte */
+        justify-content: space-between !important; /* Un à gauche, un à droite */
+        align-items: center !important; /* Aligne les centres verticalement */
+        padding: 10px 20px !important; /* Réduit l'espace pour qu'ils montent un peu */
+        top: 45px !important; /* Ajuste pour être juste sous ta bannière dorée */
+    }
+
+    .main-logo {
+        width: 80px !important; /* Réduit un peu la taille pour que ce soit plus élégant */
+        margin: 0 !important;
+        position: static !important; /* Enlève les anciens positionnements qui bloquent */
+    }
+
+    .hamburger {
+        margin: 0 !important;
+    }
+}
