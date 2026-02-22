@@ -601,3 +601,20 @@ footer {
         display: none !important;
     }
 }
+@media screen and (max-width: 768px) {
+    /* On réinitialise les marges et on centre le conteneur du formulaire */
+    form, .wpcf7, .gform_wrapper, .elementor-form {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 15px !important;  /* Petite marge de sécurité sur les côtés */
+        padding-right: 15px !important;
+        width: 100% !important;        /* S'assure qu'il prend toute la largeur dispo */
+        max-width: 100% !important;
+    }
+
+    /* Centre aussi les champs à l'intérieur si nécessaire */
+    input, textarea, select {
+        width: 100% !important;
+        box-sizing: border-box; /* Évite que le champ ne dépasse à cause du padding */
+    }
+}
