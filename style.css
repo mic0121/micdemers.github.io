@@ -699,54 +699,54 @@ footer {
         letter-spacing: 2px !important;
     }
 }
-/* --- ANIMATION TYPEWRITER SANS CURSEUR À LA FIN --- */
-
+/* --- CONFIGURATION DE BASE --- */
 .hero-content h1, 
 .hero .hero-content .subtitle {
-    overflow: hidden; 
-    white-space: nowrap; 
-    border-right: 3px solid #D4AF37; 
-    margin: 0 auto 10px auto !important;
-    width: 0; 
-    display: inline-block;
-    /* On ajoute hide-caret à la fin de la liste des animations */
-    animation: 
-        typing 2s steps(25, end) forwards, 
-        blink-caret 0.75s step-end infinite,
-        hide-caret 0s forwards;
-}
-
-/* Le nom : le curseur disparaît après 2.5s */
-.hero-content h1 {
-    animation-delay: 0.5s, 0.5s, 2.5s; 
-}
-
-/* Mentaliste : le curseur disparaît après 4.5s (2.5s d'attente + 2s de frappe) */
-.hero .hero-content .subtitle {
-    animation-delay: 2.5s, 2.5s, 4.5s;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #D4AF37;
+    margin: 0 auto !important;
     width: 0;
+    /* On utilise l'animation hide-border pour faire disparaître le curseur à la fin */
+    animation: typing 2s steps(20) forwards, blink 0.7s step-end infinite, hide-border 0s forwards;
 }
 
-/* --- NOUVELLE ANIMATION POUR CACHER LE CURSEUR --- */
-@keyframes hide-caret {
-    to { border-right-color: transparent; }
+/* --- RÉGLAGES SPÉCIFIQUES --- */
+
+/* Ton Nom (14 caractères avec l'espace) */
+.hero-content h1 {
+    font-size: 2.5rem;
+    max-width: 14ch; /* Largeur exacte du texte */
+    animation-delay: 0.5s, 0.5s, 2.5s; /* Début, Clignotement, Disparition curseur à 2.5s */
 }
 
-/* --- LES AUTRES KEYFRAMES RESTENT LES MÊMES --- */
+/* Mentaliste (10 caractères) */
+.hero .hero-content .subtitle {
+    font-size: 1.8rem !important;
+    max-width: 10ch;
+    animation-delay: 2.5s, 2.5s, 4.5s; /* Démarre après le nom, disparait à 4.5s */
+}
+
+/* --- ADAPTATION MOBILE --- */
+@media screen and (max-width: 768px) {
+    .hero-content h1 { font-size: 1.5rem !important; }
+    .hero .hero-content .subtitle { font-size: 1.2rem !important; }
+}
+
+/* --- LES MÉCANIQUES (KEYFRAMES) --- */
+
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
 }
 
-@keyframes blink-caret {
+@keyframes blink {
     from, to { border-color: transparent; }
     50% { border-color: #D4AF37; }
 }
 
-/* --- TAILLES ADAPTATIVES --- */
-@media screen and (max-width: 768px) {
-    .hero-content h1 { font-size: 1.5rem !important; }
-    .hero .hero-content .subtitle { font-size: 1.2rem !important; }
+@keyframes hide-border {
+    to { border-right: none; }
 }
 /* --- Pulsation discrète du bouton CTA --- */
 .btn-primary, .cta a {
