@@ -699,49 +699,54 @@ footer {
         letter-spacing: 2px !important;
     }
 }
-/* --- OPTION 2 : ÉCRITURE TÉLÉPATHIQUE (VERSION MOBILE-FRIENDLY) --- */
+/* --- ANIMATION TYPEWRITER SANS CURSEUR À LA FIN --- */
 
 .hero-content h1, 
 .hero .hero-content .subtitle {
-    display: table; /* Plus stable que inline-block pour le centrage */
     overflow: hidden; 
     white-space: nowrap; 
     border-right: 3px solid #D4AF37; 
-    margin: 0 auto;
-    letter-spacing: 0.10em;
+    margin: 0 auto 10px auto !important;
     width: 0; 
+    display: inline-block;
+    /* On ajoute hide-caret à la fin de la liste des animations */
     animation: 
-      typing 2s steps(25, end) forwards, 
-      blink-caret 0.75s step-end infinite;
-    animation-delay: 0.5s;
+        typing 2s steps(25, end) forwards, 
+        blink-caret 0.75s step-end infinite,
+        hide-caret 0s forwards;
 }
 
+/* Le nom : le curseur disparaît après 2.5s */
+.hero-content h1 {
+    animation-delay: 0.5s, 0.5s, 2.5s; 
+}
+
+/* Mentaliste : le curseur disparaît après 4.5s (2.5s d'attente + 2s de frappe) */
 .hero .hero-content .subtitle {
-    animation-delay: 2.2s; 
+    animation-delay: 2.5s, 2.5s, 4.5s;
+    width: 0;
 }
 
-/* --- AJUSTEMENTS POUR MOBILE (Éviter le débordement) --- */
-@media screen and (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 1.6rem !important; /* On réduit la taille pour que ça tienne */
-        letter-spacing: 0.05em;
-    }
-
-    .hero .hero-content .subtitle {
-        font-size: 1.3rem !important; /* On réduit aussi le sous-titre */
-        letter-spacing: 0.10em;
-    }
+/* --- NOUVELLE ANIMATION POUR CACHER LE CURSEUR --- */
+@keyframes hide-caret {
+    to { border-right-color: transparent; }
 }
 
-/* --- Définitions des mouvements --- */
+/* --- LES AUTRES KEYFRAMES RESTENT LES MÊMES --- */
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from { width: 0; }
+    to { width: 100%; }
 }
 
 @keyframes blink-caret {
-    from, to { border-color: transparent }
+    from, to { border-color: transparent; }
     50% { border-color: #D4AF37; }
+}
+
+/* --- TAILLES ADAPTATIVES --- */
+@media screen and (max-width: 768px) {
+    .hero-content h1 { font-size: 1.5rem !important; }
+    .hero .hero-content .subtitle { font-size: 1.2rem !important; }
 }
 /* --- Pulsation discrète du bouton CTA --- */
 .btn-primary, .cta a {
