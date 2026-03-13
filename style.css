@@ -699,3 +699,56 @@ footer {
         letter-spacing: 2px !important;
     }
 }
+/* --- Animation d'entrée au chargement (Haut de page) --- */
+.hero-content.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Le bloc part de 20px plus bas */
+    animation: fadeInUp 1.2s ease-out forwards; /* Durée de 1.2s pour le mystère */
+    animation-delay: 0.3s; /* Petit délai pour laisser le site charger */
+}
+
+/* Définition de l'animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Le bloc arrive à sa position finale */
+    }
+}
+/* --- Pulsation discrète du bouton CTA --- */
+.btn-primary, .cta a {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Définition de la pulsation dorée */
+.btn-primary {
+    animation: ctaPulse 2.5s infinite; /* Répète l'animation à l'infini */
+}
+
+@keyframes ctaPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); /* Doré transparent */
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); /* Grandit et disparaît */
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+}
+
+/* Optionnel : Changement de style au survol */
+.btn-primary:hover {
+    background-color: #D4AF37 !important; /* Le bouton devient doré plein */
+    color: #000000 !important; /* Le texte devient noir */
+    transform: translateY(-2px); /* Monte légèrement */
+}
+/* --- Zoom subtil au survol des images de services --- */
+.service-item img, .service-block img { /* Ajuste tes classes si nécessaire */
+    transition: transform 0.6s ease-in-out; /* Transition longue pour la lenteur */
+}
+
+.service-item:hover img, .service-block:hover img {
+    transform: scale(1.04); /* Zoom très léger (104%) */
+}
