@@ -666,3 +666,17 @@ footer {
     margin-bottom: 5px !important;
   }
 }
+/* Version simplifiée sans pseudo-élément */
+.service-section img {
+  transition: filter 0.4s ease; /* Transition douce */
+}
+
+.service-section .service-block:hover img {
+  filter: brightness(30%); /* Assombrit l'image à 30% de sa luminosité */
+}
+
+/* Et assure-toi que ton texte a une couleur dorée bien contrastée */
+.service-section .service-text {
+  color: #D4AF37 !important; /* Or pur */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Ajoute une ombre portée pour encore plus de lisibilité */
+} 
