@@ -627,25 +627,24 @@ footer {
  margin-right: auto;
 }
 @media screen and (max-width: 768px) {
-  /* 1. On force le parent direct à tout centrer */
+  /* 1. On centre uniquement le titre et le sous-titre */
   .subtitle, 
-  .subtitle-container, 
-  header, 
-  section {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important; /* Centre horizontalement les éléments Flex */
-    justify-content: center !important;
+  h1, 
+  h2 {
     text-align: center !important;
+    display: block !important;
     width: 100% !important;
-    margin: 0 auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
-  /* 2. On s'assure que le texte lui-même ne garde pas de marge à gauche */
-  .subtitle {
+  /* 2. On s'assure que les labels du formulaire restent à gauche */
+  label, 
+  .form-label, 
+  form span {
+    text-align: left !important;
+    display: block !important;
+    width: auto !important;
     margin-left: 0 !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-    box-sizing: border-box !important;
   }
 }
