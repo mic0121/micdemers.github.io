@@ -680,22 +680,33 @@ footer {
   color: #D4AF37 !important; /* Or pur */
   text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Ajoute une ombre portée pour encore plus de lisibilité */
 } 
-/* --- Style du titre Mentaliste --- */
-.subtitle, h2.site-subtitle { 
-  font-size: 2.5rem !important; /* Augmente la taille (ajuste à ton goût) */
-  font-weight: 800 !important;   /* Met le texte bien en gras */
-  color: #D4AF37 !important;     /* Ton doré signature */
-  text-transform: uppercase;     /* Optionnel : pour un look plus imposant */
-  letter-spacing: 2px;           /* Espace légèrement les lettres pour le prestige */
-  margin-top: -10px !important;  /* Rapproche le mot de ton nom en haut */
+/* --- Style UNIQUEMENT pour le titre sous ton nom (Accueil) --- */
+header .subtitle, 
+.hero .subtitle, 
+.intro .subtitle { 
+  font-size: 2.8rem !important; /* Plus gros */
+  font-weight: 800 !important;   /* Très gras */
+  color: #D4AF37 !important;     /* Ton doré */
+  text-transform: uppercase; 
+  letter-spacing: 3px;
+  margin-top: -5px !important;
   display: block;
   text-align: center;
 }
 
-/* Ajustement pour mobile pour ne pas que ce soit TROP gros */
+/* --- On s'assure que le .subtitle du FORMULAIRE reste normal --- */
+#contact-section .subtitle, 
+form .subtitle {
+  font-size: 1.1rem !important; /* Taille normale pour un formulaire */
+  font-weight: normal !important;
+  text-transform: none;
+  letter-spacing: normal;
+  margin-top: 10px !important;
+}
+
+/* --- Ajustement Mobile pour le titre principal --- */
 @media screen and (max-width: 768px) {
-  .subtitle, h2.site-subtitle {
+  header .subtitle, .hero .subtitle {
     font-size: 1.8rem !important;
-    margin-top: -5px !important;
   }
 }
