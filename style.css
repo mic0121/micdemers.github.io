@@ -616,6 +616,12 @@ footer {
     .desktop-socials a:hover {
         transform: scale(1.1); 
     }
+@media (max-width: 768px) {
+  .subtitle {
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 .subtitle {
   font-size: 15px;
