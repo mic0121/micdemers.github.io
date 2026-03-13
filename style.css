@@ -711,30 +711,46 @@ footer {
     animation: typing 2s steps(20) forwards, blink 0.7s step-end infinite, hide-border 0s forwards;
 }
 
-/* --- RÉGLAGES SPÉCIFIQUES --- */
-
-/* Ton Nom (14 caractères avec l'espace) */
-.hero-content h1 {
-    font-size: 2.5rem;
-    max-width: 14ch; /* Largeur exacte du texte */
-    animation-delay: 0.5s, 0.5s, 2.5s; /* Début, Clignotement, Disparition curseur à 2.5s */
+/* --- CONFIGURATION TYPEWRITER SANS COUPURE --- */
+.hero-content h1, 
+.hero .hero-content .subtitle {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #D4AF37;
+    margin: 0 auto 10px auto !important;
+    width: 0;
+    display: block; /* Force le bloc pour que width: 100% fonctionne */
+    /* On utilise max-content pour que la largeur s'adapte parfaitement au texte */
+    max-width: max-content; 
+    animation: typing 2s steps(30) forwards, blink 0.7s step-end infinite, hide-border 0s forwards;
 }
 
-/* Mentaliste (10 caractères) */
+/* Ton Nom */
+.hero-content h1 {
+    font-size: 2.5rem;
+    animation-delay: 0.5s, 0.5s, 2.5s;
+}
+
+/* Mentaliste */
 .hero .hero-content .subtitle {
     font-size: 1.8rem !important;
-    max-width: 10ch;
-    animation-delay: 2.5s, 2.5s, 4.5s; /* Démarre après le nom, disparait à 4.5s */
+    animation-delay: 2.5s, 2.5s, 4.5s;
 }
 
 /* --- ADAPTATION MOBILE --- */
 @media screen and (max-width: 768px) {
-    .hero-content h1 { font-size: 1.5rem !important; }
-    .hero .hero-content .subtitle { font-size: 1.2rem !important; }
+    .hero-content h1 { 
+        font-size: 1.6rem !important;
+        /* On s'assure que sur petit écran ça ne déborde pas */
+        max-width: 90vw; 
+    }
+    .hero .hero-content .subtitle { 
+        font-size: 1.3rem !important;
+        max-width: 90vw;
+    }
 }
 
-/* --- LES MÉCANIQUES (KEYFRAMES) --- */
-
+/* --- LES MÉCANIQUES --- */
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
