@@ -711,58 +711,41 @@ footer {
     animation: typing 2s steps(20) forwards, blink 0.7s step-end infinite, hide-border 0s forwards;
 }
 
-/* --- CONFIGURATION TYPEWRITER SANS COUPURE --- */
+/* --- CONFIGURATION TYPEWRITER ULTRA-STABLE (REVEAL) --- */
 .hero-content h1, 
 .hero .hero-content .subtitle {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid #D4AF37;
+    position: relative;
+    display: block;
     margin: 0 auto 10px auto !important;
-    width: 0;
-    display: block; /* Force le bloc pour que width: 100% fonctionne */
-    /* On utilise max-content pour que la largeur s'adapte parfaitement au texte */
-    max-width: max-content; 
-    animation: typing 2s steps(30) forwards, blink 0.7s step-end infinite, hide-border 0s forwards;
+    text-align: center;
+    /* On utilise clip-path pour révéler le texte sans changer sa largeur */
+    clip-path: inset(0 100% 0 0); 
+    animation: reveal-text 2s ease-out forwards;
+    white-space: nowrap; /* Empêche le texte de sauter à la ligne */
 }
 
 /* Ton Nom */
 .hero-content h1 {
     font-size: 2.5rem;
-    animation-delay: 0.5s, 0.5s, 2.5s;
+    animation-delay: 0.5s;
 }
 
 /* Mentaliste */
 .hero .hero-content .subtitle {
     font-size: 1.8rem !important;
-    animation-delay: 2.5s, 2.5s, 4.5s;
+    animation-delay: 2.2s; /* Commence après le nom */
 }
 
 /* --- ADAPTATION MOBILE --- */
 @media screen and (max-width: 768px) {
-    .hero-content h1 { 
-        font-size: 1.6rem !important;
-        /* On s'assure que sur petit écran ça ne déborde pas */
-        max-width: 90vw; 
-    }
-    .hero .hero-content .subtitle { 
-        font-size: 1.3rem !important;
-        max-width: 90vw;
-    }
+    .hero-content h1 { font-size: 1.6rem !important; }
+    .hero .hero-content .subtitle { font-size: 1.2rem !important; }
 }
 
-/* --- LES MÉCANIQUES --- */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    from, to { border-color: transparent; }
-    50% { border-color: #D4AF37; }
-}
-
-@keyframes hide-border {
-    to { border-right: none; }
+/* --- L'ANIMATION RIDEAU --- */
+@keyframes reveal-text {
+    from { clip-path: inset(0 100% 0 0); } /* Rideau fermé à droite */
+    to { clip-path: inset(0 0 0 0); }      /* Rideau ouvert à 100% */
 }
 /* --- Pulsation discrète du bouton CTA --- */
 .btn-primary, .cta a {
