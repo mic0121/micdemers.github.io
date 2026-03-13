@@ -616,11 +616,16 @@ footer {
     .desktop-socials a:hover {
         transform: scale(1.1); 
     }
-@media (max-width: 768px) {
-  .subtitle {
-    text-align: center;
-    padding-left: 15px;
-    padding-right: 15px;
+/* Ciblage spécifique pour le texte de rappel de réservation sur mobile */
+@media screen and (max-width: 767px) {
+  #block-yui_3_17_2_1_1714150530467_4761 p, 
+  .fe-662bd8928509c16823c3176a p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    width: 100% !important;
   }
 }
 .subtitle {
