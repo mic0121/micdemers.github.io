@@ -680,33 +680,22 @@ footer {
   color: #D4AF37 !important; /* Or pur */
   text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Ajoute une ombre portée pour encore plus de lisibilité */
 } 
-/* --- Style UNIQUEMENT pour le titre sous ton nom (Accueil) --- */
-header .subtitle, 
-.hero .subtitle, 
-.intro .subtitle { 
-  font-size: 2.8rem !important; /* Plus gros */
-  font-weight: 800 !important;   /* Très gras */
-  color: #D4AF37 !important;     /* Ton doré */
-  text-transform: uppercase; 
-  letter-spacing: 3px;
-  margin-top: -5px !important;
-  display: block;
-  text-align: center;
+/* 1. Style spécifique pour le mot MENTALISTE sous ton nom */
+.hero .hero-content .subtitle {
+    font-size: 3rem !important;      /* Très gros */
+    font-weight: 900 !important;      /* Très gras */
+    color: #D4AF37 !important;        /* Or */
+    text-transform: uppercase !important;
+    letter-spacing: 4px !important;   /* Espace entre les lettres pour le style */
+    margin-top: 5px !important;       /* Ajuste l'espace avec ton nom */
+    display: block !important;
+    text-align: center !important;
 }
 
-/* --- On s'assure que le .subtitle du FORMULAIRE reste normal --- */
-#contact-section .subtitle, 
-form .subtitle {
-  font-size: 1.1rem !important; /* Taille normale pour un formulaire */
-  font-weight: normal !important;
-  text-transform: none;
-  letter-spacing: normal;
-  margin-top: 10px !important;
-}
-
-/* --- Ajustement Mobile pour le titre principal --- */
+/* 2. Ajustement pour mobile (pour pas que ça dépasse de l'écran) */
 @media screen and (max-width: 768px) {
-  header .subtitle, .hero .subtitle {
-    font-size: 1.8rem !important;
-  }
+    .hero .hero-content .subtitle {
+        font-size: 1.8rem !important;
+        letter-spacing: 2px !important;
+    }
 }
