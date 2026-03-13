@@ -699,20 +699,28 @@ footer {
         letter-spacing: 2px !important;
     }
 }
-/* --- Animation d'entrée au chargement (Haut de page) --- */
-.hero-content.fade-in {
-    opacity: 0;
-    transform: translateY(20px); /* Le bloc part de 20px plus bas */
-    animation: fadeInUp 1.2s ease-out forwards; /* Durée de 1.2s pour le mystère */
-    animation-delay: 0.3s; /* Petit délai pour laisser le site charger */
+/* --- Option 2 : Écriture Télépathique (Typewriter) --- */
+.hero-content h1, 
+.hero .hero-content .subtitle {
+    overflow: hidden; /* Cache le texte qui n'est pas encore tapé */
+    border-right: .15em solid #D4AF37; /* Curseur doré */
+    white-space: nowrap; /* Empêche le texte de revenir à la ligne */
+    margin: 0 auto; /* Centre le texte */
+    letter-spacing: .15em;
+    animation: 
+      typing 2.5s steps(30, end), /* Vitesse de frappe */
+      blink-caret .75s step-end infinite; /* Clignotement du curseur */
 }
 
-/* Définition de l'animation */
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0); /* Le bloc arrive à sa position finale */
-    }
+/* Définition des animations */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #D4AF37; }
 }
 /* --- Pulsation discrète du bouton CTA --- */
 .btn-primary, .cta a {
