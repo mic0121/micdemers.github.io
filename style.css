@@ -616,22 +616,6 @@ footer {
     .desktop-socials a:hover {
         transform: scale(1.1); 
     }
-@media screen and (max-width: 768px) {
-  .subtitle {
-    display: block !important;       /* S'assure que le bloc prend sa propre ligne */
-    text-align: center !important;   /* Centre le texte à l'intérieur du bloc */
-    width: 100% !important;          /* Force le bloc à prendre toute la largeur */
-    margin-left: auto !important;    /* Centre le bloc lui-même */
-    margin-right: auto !important;   /* Centre le bloc lui-même */
-    padding-left: 10px !important;   /* Évite que le texte touche les bords */
-    padding-right: 10px !important;  /* Évite que le texte touche les bords */
-    box-sizing: border-box !important; /* Pour que le padding ne dépasse pas la largeur */
-  }
-
-  /* Pour aligner aussi le titre "PARLEZ-NOUS..." s'il n'est pas déjà centré */
-  h2, .title { 
-    text-align: center !important;
-  }
 }
 .subtitle {
   font-size: 15px;
@@ -641,4 +625,27 @@ footer {
   max-width: 500px;
   margin-left: auto;
  margin-right: auto;
+}
+@media screen and (max-width: 768px) {
+  /* 1. On force le parent direct à tout centrer */
+  .subtitle, 
+  .subtitle-container, 
+  header, 
+  section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Centre horizontalement les éléments Flex */
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* 2. On s'assure que le texte lui-même ne garde pas de marge à gauche */
+  .subtitle {
+    margin-left: 0 !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    box-sizing: border-box !important;
+  }
 }
