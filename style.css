@@ -699,53 +699,53 @@ footer {
         letter-spacing: 2px !important;
     }
 }
-/* --- CONFIGURATION DE BASE --- */
-.hero-content h1, 
-.hero .hero-content .subtitle {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid #D4AF37;
-    margin: 0 auto !important;
-    width: 0;
-    /* On utilise l'animation hide-border pour faire disparaître le curseur à la fin */
-    animation: typing 2s steps(20) forwards, blink 0.7s step-end infinite, hide-border 0s forwards;
-}
-
-/* --- CONFIGURATION TYPEWRITER ULTRA-STABLE (REVEAL) --- */
+/* --- ANIMATION DE RÉVÉLATION (SANS COUPURE) --- */
 .hero-content h1, 
 .hero .hero-content .subtitle {
     position: relative;
-    display: block;
+    display: inline-block; /* Pour bien entourer le texte */
     margin: 0 auto 10px auto !important;
-    text-align: center;
-    /* On utilise clip-path pour révéler le texte sans changer sa largeur */
-    clip-path: inset(0 100% 0 0); 
-    animation: reveal-text 2s ease-out forwards;
-    white-space: nowrap; /* Empêche le texte de sauter à la ligne */
+    white-space: nowrap;
+    color: #fff; /* Couleur de base */
 }
 
-/* Ton Nom */
-.hero-content h1 {
-    font-size: 2.5rem;
+.hero .hero-content .subtitle {
+    color: #D4AF37 !important;
+}
+
+/* On crée un volet noir qui cache le texte et glisse */
+.hero-content h1::after, 
+.hero .hero-content .subtitle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Doit être la même couleur que ton fond */
+    animation: slideReveal 1.5s ease-out forwards;
+}
+
+/* Le nom se révèle tout de suite */
+.hero-content h1::after {
     animation-delay: 0.5s;
 }
 
-/* Mentaliste */
-.hero .hero-content .subtitle {
-    font-size: 1.8rem !important;
-    animation-delay: 2.2s; /* Commence après le nom */
+/* Le titre se révèle après le nom */
+.hero .hero-content .subtitle::after {
+    animation-delay: 2s;
+}
+
+/* L'animation qui fait glisser le volet vers la droite */
+@keyframes slideReveal {
+    from { transform: translateX(0); }
+    to { transform: translateX(101%); } /* Pousse le volet hors du texte */
 }
 
 /* --- ADAPTATION MOBILE --- */
 @media screen and (max-width: 768px) {
     .hero-content h1 { font-size: 1.6rem !important; }
     .hero .hero-content .subtitle { font-size: 1.2rem !important; }
-}
-
-/* --- L'ANIMATION RIDEAU --- */
-@keyframes reveal-text {
-    from { clip-path: inset(0 100% 0 0); } /* Rideau fermé à droite */
-    to { clip-path: inset(0 0 0 0); }      /* Rideau ouvert à 100% */
 }
 /* --- Pulsation discrète du bouton CTA --- */
 .btn-primary, .cta a {
