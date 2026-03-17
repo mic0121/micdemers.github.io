@@ -823,34 +823,52 @@ footer {
     filter: brightness(0.6); /* L'image s'assombrit pour faire ressortir le texte */
     transform: scale(1.05);
 }
+/* --- AMÉLIORATION DU BOUTON SPECTACLE --- */
 
-/* Texte qui apparaît sur l'image au survol */
 .spectacle-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    opacity: 0;
+    opacity: 0; /* Caché sur ordinateur par défaut */
     transition: opacity 0.4s ease;
+    width: 80%; /* Pour éviter que le texte touche les bords */
+    text-align: center;
 }
 
 .spectacle-overlay span {
     color: #D4AF37;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
-    border: 1px solid #D4AF37;
-    padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #D4AF37;
+    padding: 12px 24px;
+    background: rgba(0, 0, 0, 0.8);
+    display: inline-block;
 }
 
-.spectacle-banner:hover .spectacle-overlay {
-    opacity: 1;
-}
-
-/* Mobile : on s'assure que l'image ne dépasse pas */
+/* --- AJUSTEMENTS SPÉCIFIQUES MOBILE --- */
 @media screen and (max-width: 768px) {
-    .promo-spectacle { padding: 40px 15px; }
-    .spectacle-overlay span { font-size: 1.1rem; }
+    .spectacle-overlay {
+        opacity: 1; /* TOUJOURS VISIBLE sur mobile */
+        position: relative; /* On le sort de l'image pour qu'il soit en dessous */
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .spectacle-overlay span {
+        width: 90%; /* Bouton large pour les pouces */
+        background: #D4AF37; /* Fond plein pour être immanquable */
+        color: #000; /* Texte noir sur fond doré */
+        border: none;
+    }
+
+    .spectacle-banner:hover .spectacle-img {
+        filter: none; /* On n'assombrit pas l'image sur mobile */
+        transform: none;
+    }
 }
