@@ -872,3 +872,34 @@ footer {
         transform: none;
     }
 }
+/* ==========================================
+   CORRECTION MOBILE - PAGE À PROPOS UNIQUEMENT
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* 1. On cible uniquement la page à propos via sa classe body */
+    .page-about-only .navbar {
+        position: relative !important; /* Sort du flux "fixe" pour être au-dessus de l'image */
+        top: 0 !important;
+        background-color: #0b0b0b !important; /* Fond noir pour rester pro */
+        padding: 15px 20px !important;
+        display: flex !important;
+        justify-content: flex-start !important; /* Aligne le retour à gauche */
+    }
+
+    /* 2. On fait disparaître le hamburger UNIQUEMENT ici */
+    .page-about-only .hamburger {
+        display: none !important;
+    }
+
+    /* 3. On s'assure que l'image ne remonte pas sous le menu */
+    .page-about-only .about-page {
+        padding-top: 20px !important;
+        margin-top: 0 !important;
+    }
+
+    .page-about-only .about-page img {
+        margin-top: 10px !important;
+        width: 100% !important;
+    }
+}
