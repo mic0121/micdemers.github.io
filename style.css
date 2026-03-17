@@ -903,3 +903,4 @@ footer {
         width: 100% !important;
     }
 }
+.page-about-only { border: 5px solid red !important; }
