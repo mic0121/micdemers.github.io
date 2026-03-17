@@ -788,3 +788,69 @@ footer {
 .service-item:hover img, .service-block:hover img {
     transform: scale(1.04); /* Zoom très léger (104%) */
 }
+/* --- SECTION SPECTACLE --- */
+.promo-spectacle {
+    padding: 60px 20px;
+    background-color: #000; /* Fond noir pour rester dans le thème */
+    text-align: center;
+}
+
+.spectacle-banner {
+    max-width: 900px; /* Largeur optimale pour une affiche */
+    margin: 0 auto;
+    position: relative;
+    border: 2px solid #D4AF37; /* Bordure dorée subtile */
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+}
+
+.spectacle-img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+/* L'effet au survol de l'image */
+.spectacle-banner:hover {
+    transform: scale(1.02); /* L'affiche grossit légèrement */
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+    border-color: #fff; /* La bordure devient blanche au survol */
+}
+
+.spectacle-banner:hover .spectacle-img {
+    filter: brightness(0.6); /* L'image s'assombrit pour faire ressortir le texte */
+    transform: scale(1.05);
+}
+
+/* Texte qui apparaît sur l'image au survol */
+.spectacle-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.spectacle-overlay span {
+    color: #D4AF37;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px solid #D4AF37;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.spectacle-banner:hover .spectacle-overlay {
+    opacity: 1;
+}
+
+/* Mobile : on s'assure que l'image ne dépasse pas */
+@media screen and (max-width: 768px) {
+    .promo-spectacle { padding: 40px 15px; }
+    .spectacle-overlay span { font-size: 1.1rem; }
+}
