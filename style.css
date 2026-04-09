@@ -916,14 +916,3 @@ footer {
         padding-top: 10px !important;
     }
 }
-/* Réduit l'espace sous la section qui précède le contact */
-#newsletter, .newsletter-section { 
-    padding-bottom: 20px !important; 
-    margin-bottom: 0 !important;
-}
-
-/* On s'assure que la section contact ne s'éloigne pas */
-#contact {
-    margin-top: 0 !important;
-    padding-top: 20px !important;
-}
