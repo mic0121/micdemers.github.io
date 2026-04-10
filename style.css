@@ -931,3 +931,47 @@ footer {
 .form-container {
     padding-top: 10px !important;
 }
+/* --- STYLE ISOLÉ POUR LA PAGE PERFORMANCE --- */
+
+.page-performance .services-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.page-performance .service-item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 80px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.page-performance .service-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.page-performance .service-text h2 {
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.page-performance .service-image img {
+    width: 100%;
+    border-radius: 4px;
+    filter: grayscale(30%);
+    transition: filter 0.3s ease;
+}
+
+/* On s'assure que sur mobile tout s'empile bien pour la page performance */
+@media (max-width: 768px) {
+    .page-performance .service-item, 
+    .page-performance .service-item:nth-child(even) {
+        flex-direction: column !important;
+        text-align: center;
+    }
+}
