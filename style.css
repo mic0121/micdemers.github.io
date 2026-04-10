@@ -916,3 +916,18 @@ footer {
         padding-top: 10px !important;
     }
 }
+/* Réduction spécifique de l'espace sous le bouton de réservation */
+.promo-spectacle {
+    padding-bottom: 20px !important; /* Réduit l'espace sous le bouton */
+}
+
+/* Réduction de l'espace au-dessus de l'infolettre */
+footer {
+    margin-top: 10px !important; 
+    padding-top: 0px !important;
+}
+
+/* Si ton infolettre est dans un container spécifique, on réduit son padding */
+.form-container {
+    padding-top: 10px !important;
+}
