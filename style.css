@@ -271,7 +271,7 @@ a { text-decoration: none; color: inherit !important; }
 
     /* Ajout d'un petit séparateur et des icônes dans le menu ouvert */
     .nav-links::after {
-        content: "Retrouvez-moi sur Instagram & TikTok";
+        content: "Retrouvez-moi sur les réseaux sociaux";
         display: block;
         margin-top: 20px;
         padding-top: 20px;
