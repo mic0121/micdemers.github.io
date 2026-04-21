@@ -133,3 +133,42 @@ a { text-decoration: none; color: inherit !important; }
     opacity: 0.7;
     font-weight: 300;
 }
+/* --- SECTION CTA FINAL --- */
+.final-cta {
+    margin-top: 80px;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.cta-title {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+
+.cta-text {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+}
+
+/* On s'assure que le bouton dans cette section a le bon look */
+.final-cta .btn-premium {
+    display: inline-block;
+    background: var(--gold);
+    color: #000 !important;
+    padding: 20px 50px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    transition: 0.4s;
+    border: none;
+}
+
+.final-cta .btn-premium:hover {
+    background: #fff;
+    transform: translateY(-5px);
+}
