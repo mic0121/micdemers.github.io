@@ -1,110 +1,106 @@
+/* ==========================================
+   CONFIGURATION PRESTIGE 
+   ========================================== */
 :root {
     --gold: #D4AF37;
     --dark: #050505;
     --light: #ffffff;
-    --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F2D472 50%, #D4AF37 100%);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: var(--dark);
-    color: var(--light) !important; /* Force le texte blanc */
+    color: var(--light) !important;
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
     overflow-x: hidden;
 }
 
+/* Élimine les reflets violets sur les liens */
 a { text-decoration: none; color: inherit !important; }
 
-/* --- ANIMATIONS --- */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-.reveal { animation: fadeInUp 1s ease-out forwards; }
-
-/* --- NAVIGATION --- */
-.top-announcement {
-    background: var(--gold-gradient);
-    color: #000;
-    text-align: center;
-    padding: 10px 0;
-    font-weight: 800;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
+/* --- ANIMATION D'ENTRÉE CINÉMATOGRAPHIQUE --- */
+@keyframes heroReveal {
+    0% { opacity: 0; transform: scale(1.05); filter: blur(5px); }
+    100% { opacity: 1; transform: scale(1); filter: blur(0); }
 }
 
+/* --- NAVIGATION INVISIBLE (OVERLAY) --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
-    background: rgba(0,0,0,0.9);
-    position: sticky;
-    top: 0;
+    padding: 30px 5%;
+    position: absolute; /* Flotte sur l'image */
+    width: 100%;
     z-index: 1000;
 }
 
-.logo-text { font-weight: 900; letter-spacing: 3px; font-size: 1.2rem; }
+.logo-text { font-weight: 900; letter-spacing: 4px; font-size: 1.4rem; }
 
-.nav-links { display: flex; list-style: none; gap: 25px; align-items: center; }
+.nav-links { display: flex; list-style: none; gap: 30px; align-items: center; }
+
+.nav-item { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; transition: 0.3s; }
+.nav-item:hover { opacity: 1; color: var(--gold) !important; }
 
 .btn-gold-nav {
-    background: var(--gold-gradient);
-    color: #000 !important;
-    padding: 8px 15px;
-    font-weight: 800;
-    border-radius: 2px;
+    border: 1px solid var(--gold);
+    padding: 10px 20px;
+    color: var(--gold) !important;
+    font-weight: 700;
 }
 
-/* --- HERO & BOUTONS --- */
+/* --- HERO SECTION --- */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('images/IMG_6112_pp.JPG') no-repeat center center;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), 
+                url('images/IMG_6112_pp.JPG') no-repeat center center;
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    animation: heroReveal 2s ease-out;
 }
 
-.main-title { font-size: clamp(3rem, 10vw, 5rem); letter-spacing: 12px; margin-bottom: 10px; }
-
-.btn-premium, .btn-outline-gold {
-    display: inline-block;
-    padding: 15px 35px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin-top: 20px;
+.main-title { 
+    font-size: clamp(3rem, 12vw, 6rem); 
+    letter-spacing: 15px; 
+    font-weight: 900; 
+    text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
-.btn-premium { background: var(--gold-gradient); color: #000 !important; border: none; }
-.btn-outline-gold { background: transparent; border: 2px solid var(--gold); color: var(--gold) !important; }
+.hero-subtitle { letter-spacing: 8px; color: var(--gold); font-weight: 300; margin-bottom: 25px; }
 
-/* --- SERVICES --- */
-.services-section { padding: 80px 5%; text-align: center; }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+.btn-premium {
+    background: var(--gold);
+    color: #000 !important;
+    padding: 18px 45px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+.btn-premium:hover { background: #fff; transform: translateY(-3px); }
+
+/* --- SERVICES & CARDS --- */
+.services-section { padding: 100px 5%; text-align: center; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+
 .card {
-    height: 450px; background-size: cover; background-position: center;
-    position: relative; display: flex; align-items: flex-end; padding: 30px;
+    height: 500px; position: relative; overflow: hidden;
+    background-size: cover; background-position: center;
+    display: flex; align-items: flex-end; transition: 0.5s;
 }
-.card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); }
-.card-content { position: relative; z-index: 2; text-align: left; }
-.card-content h3 { color: var(--gold); font-size: 1.8rem; }
+.card:hover { transform: scale(1.02); }
 
-/* --- FOOTER --- */
-footer { padding: 60px 5%; text-align: center; background: #000; }
-
-/* --- MOBILE HAMBURGER --- */
-.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-.hamburger span { width: 25px; height: 3px; background: #fff; transition: 0.3s; }
-
-@media (max-width: 768px) {
-    .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #000; padding: 20px; }
-    .nav-links.active { display: flex; }
-    .hamburger { display: flex; }
+.card-overlay { 
+    position: absolute; inset: 0; 
+    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 60%); 
 }
 
-body.page-about-only { background: var(--dark) !important; }
+.card-content { position: relative; z-index: 2; padding: 40px; text-align: left; }
+.card-content h3 { color: var(--gold); font-size: 2rem; margin-bottom: 10px; }
