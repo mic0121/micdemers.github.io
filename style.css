@@ -5,29 +5,22 @@
     --gold: #D4AF37;
     --dark: #050505;
     --light: #ffffff;
-    --grey: #777;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
+html, body {
+    background-color: var(--dark) !important; /* Force le noir partout */
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: var(--dark);
+    padding: 0;
     color: var(--light);
-    line-height: 1.6;
-    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* ==========================================
-   2. HEADER & NAVIGATION
+   2. NAVIGATION & HERO (Pour l'index)
    ========================================== */
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 30px 5%;
     position: absolute;
     width: 100%;
@@ -35,85 +28,25 @@ body {
     box-sizing: border-box;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-    align-items: center;
-}
-
-.nav-item {
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    transition: 0.3s;
-}
-
-.nav-item:hover { color: var(--gold); }
-
-/* ==========================================
-   3. HERO SECTION (ACCUEIL)
-   ========================================== */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
                 url('images/IMG_6112_pp.JPG') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-}
-
-.main-title {
-    font-size: clamp(2.5rem, 10vw, 5.5rem);
-    font-weight: 900;
-    letter-spacing: 12px;
-    animation: glowAppearance 1.5s ease-out forwards;
 }
 
 /* ==========================================
-   4. SERVICES & CARDS (ACCUEIL)
+   3. SÉCURITÉ ANTI-PAGE BLANCHE (À PROPOS)
    ========================================== */
-.card {
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: flex-end;
-    padding: 40px;
-    position: relative;
-    transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    overflow: hidden;
-    border-radius: 4px;
-}
-
-.card:hover { transform: translateY(-10px); }
-
-/* ==========================================
-   5. PAGE PERFORMANCE
-   ========================================== */
-.page-performance .service-item {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 80px;
-    background: rgba(255, 255, 255, 0.02);
-    padding: 30px;
-    border-radius: 4px;
-    border: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-.page-performance .service-item:nth-child(even) { flex-direction: row-reverse; }
-
-/* ==========================================
-   6. CORRECTIF PAGE À PROPOS (L'ARTISTE)
-   ========================================== */
-body.page-about-only {
-    background-color: var(--dark) !important;
-    background-image: none !important; /* Enlève l'image du Hero si elle s'affiche par erreur */
+/* On cible le body ET la section pour être certain d'écraser le blanc */
+body.page-about-only, 
+body.page-about-only section.about-page {
+    background-color: #050505 !important;
+    background-image: none !important;
+    color: #ffffff !important;
 }
 
 .about-page {
@@ -123,45 +56,26 @@ body.page-about-only {
     text-align: center;
 }
 
-.about-page h1 {
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    margin-bottom: 30px;
+.about-page p {
+    color: #ffffff !important;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-align: justify;
 }
 
 .about-page img {
-    width: 100%;
     max-width: 400px;
-    border-radius: 4px;
-    margin-bottom: 40px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-}
-
-.about-page p {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-    text-align: justify;
-    color: var(--light) !important;
+    width: 100%;
+    border: 1px solid var(--gold);
+    margin-bottom: 30px;
 }
 
 /* ==========================================
-   7. ANIMATIONS
-   ========================================== */
-@keyframes glowAppearance {
-    0% { opacity: 0; filter: blur(10px); transform: scale(0.9); text-shadow: 0 0 20px var(--gold); }
-    100% { opacity: 1; filter: blur(0); transform: scale(1); text-shadow: 0 0 0px transparent; }
-}
-
-/* ==========================================
-   8. RESPONSIVE
+   4. PAGE PERFORMANCE (Mobile-ready)
    ========================================== */
 @media (max-width: 768px) {
-    .page-performance .service-item, 
-    .page-performance .service-item:nth-child(even) {
+    .page-performance .service-item {
         flex-direction: column !important;
         text-align: center;
     }
-
-    .navbar { padding: 20px; }
 }
