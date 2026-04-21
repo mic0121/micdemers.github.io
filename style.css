@@ -1,5 +1,11 @@
+/* TEST DE CONNEXION - SI TU VOIS DU ROUGE, LE CSS EST LU */
+body {
+    background-color: #050505 !important;
+    border-top: 10px solid red !important; 
+}
+
 /* ==========================================
-   1. VARIABLES & BASES
+   BASES PREMIUM (RETOUR AU CODE QUI MARCHE)
    ========================================== */
 :root {
     --gold: #D4AF37;
@@ -7,17 +13,15 @@
     --light: #ffffff;
 }
 
+/* On force le noir sur toutes les pages par défaut */
 html, body {
-    background-color: var(--dark) !important; /* Force le noir partout */
-    margin: 0;
-    padding: 0;
+    background-color: var(--dark) !important;
     color: var(--light);
+    margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
 
-/* ==========================================
-   2. NAVIGATION & HERO (Pour l'index)
-   ========================================== */
+/* NAVIGATION */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -25,57 +29,29 @@ html, body {
     position: absolute;
     width: 100%;
     z-index: 1000;
-    box-sizing: border-box;
 }
 
+.nav-item { color: white; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; }
+
+/* HERO (ACCUEIL) */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
-                url('images/IMG_6112_pp.JPG') no-repeat center center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/IMG_6112_pp.JPG') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* ==========================================
-   3. SÉCURITÉ ANTI-PAGE BLANCHE (À PROPOS)
-   ========================================== */
-/* On cible le body ET la section pour être certain d'écraser le blanc */
-body.page-about-only, 
-body.page-about-only section.about-page {
-    background-color: #050505 !important;
-    background-image: none !important;
-    color: #ffffff !important;
-}
-
-.about-page {
-    padding: 150px 20px 80px;
-    max-width: 800px;
-    margin: 0 auto;
     text-align: center;
 }
 
-.about-page p {
-    color: #ffffff !important;
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    text-align: justify;
+/* FIX SPÉCIFIQUE PAGE À PROPOS */
+body.page-about-only {
+    background: #050505 !important;
 }
 
-.about-page img {
-    max-width: 400px;
-    width: 100%;
-    border: 1px solid var(--gold);
-    margin-bottom: 30px;
+.about-page {
+    padding: 150px 20px;
+    text-align: center;
 }
 
-/* ==========================================
-   4. PAGE PERFORMANCE (Mobile-ready)
-   ========================================== */
-@media (max-width: 768px) {
-    .page-performance .service-item {
-        flex-direction: column !important;
-        text-align: center;
-    }
-}
+.about-page p { color: white !important; }
