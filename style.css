@@ -1,137 +1,82 @@
 /* ==========================================
-   1. VARIABLES & RESET
+   1. TON CODE ORIGINAL (RESTAURÉ)
    ========================================== */
 :root {
     --gold: #D4AF37;
     --dark: #050505;
     --light: #ffffff;
-    --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F2D472 50%, #D4AF37 100%);
 }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--dark);
     color: var(--light);
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
 }
 
-/* ==========================================
-   2. ANIMATIONS D'ENTRÉE
-   ========================================== */
-@keyframes revealHero {
-    0% { opacity: 0; transform: scale(1.1); filter: blur(10px); }
-    100% { opacity: 1; transform: scale(1); filter: blur(0); }
+/* Ton animation originale */
+@keyframes glowAppearance {
+    0% { opacity: 0; filter: blur(10px); text-shadow: 0 0 20px var(--gold); }
+    100% { opacity: 1; filter: blur(0); text-shadow: 0 0 0px transparent; }
 }
 
-@keyframes slideUp {
-    0% { opacity: 0; transform: translateY(40px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in { animation: slideUp 1s ease-out forwards; }
-
-/* ==========================================
-   3. MENU OVERLAY (GLASSMORPHISM)
-   ========================================== */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 5%;
-    position: fixed; /* Fixé en haut pour flotter sur l'image */
-    width: 100%;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.2); /* Très transparent */
-    backdrop-filter: blur(10px); /* Flou derrière le menu */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 0.4s;
-}
-
-.nav-item {
-    color: var(--light);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    margin-left: 30px;
-    transition: 0.3s;
-    opacity: 0.8;
-}
-
-.nav-item:hover { opacity: 1; color: var(--gold); }
-
-/* ==========================================
-   4. HERO AVEC EFFET FADE / ZOOM
-   ========================================== */
 .hero {
     height: 100vh;
-    overflow: hidden;
-    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), 
+                url('images/IMG_6112_pp.JPG') no-repeat center center;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
-                url('images/IMG_6112_pp.JPG') no-repeat center center;
-    background-size: cover;
-    z-index: -1;
-    animation: revealHero 2.5s ease-out; /* Effet de zoom lent au chargement */
-}
-
 .main-title {
-    font-size: clamp(2rem, 10vw, 5.5rem);
-    letter-spacing: 15px;
-    font-weight: 900;
-    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    animation: slideUp 1.5s ease-out;
+    font-size: 5rem;
+    letter-spacing: 12px;
+    animation: glowAppearance 1.5s ease-out;
 }
 
-/* ==========================================
-   5. CARTES DE SERVICES (OVERLAY PHOTO)
-   ========================================== */
+/* Tes services originaux */
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    padding: 60px 5%;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    gap: 20px;
 }
 
 .card {
-    height: 550px;
-    position: relative;
+    flex: 1;
+    height: 400px;
     background-size: cover;
     background-position: center;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    transition: 0.3s;
 }
 
-.card:hover { transform: scale(1.03); }
-
-.card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
-    transition: 0.4s;
-}
-
-.card:hover .card-overlay { background: rgba(0,0,0,0.4); }
-
-.card-content {
-    position: absolute;
-    bottom: 0; padding: 40px; z-index: 2;
-}
+.card:hover { transform: translateY(-10px); }
 
 /* ==========================================
-   6. FIX À PROPOS
+   2. LE SEUL AJOUT POUR "À PROPOS"
    ========================================== */
-body.page-about-only .hero { display: none; }
-body.page-about-only .navbar { background: rgba(0,0,0,0.9); position: relative; }
+/* Cette règle ne s'active QUE si le body a la classe "page-about-only" */
+body.page-about-only {
+    background-color: #050505 !important;
+    background-image: none !important;
+}
+
+.about-page {
+    padding: 120px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-page p {
+    color: white !important;
+    text-align: justify;
+    font-size: 1.1rem;
+}
