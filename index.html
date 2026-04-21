@@ -14,6 +14,21 @@
     <link rel="stylesheet" href="style.css?v=2026">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navContainer = document.getElementById('nav-container');
+
+    hamburger.onclick = () => {
+        navContainer.classList.toggle('active');
+        // Optionnel : change l'apparence du hamburger en X
+        hamburger.classList.toggle('toggle');
+    };
+
+    // Ferme le menu quand on clique sur un lien
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.onclick = () => navContainer.classList.remove('active');
+    });
+</script>
 <body>
 <header>
     <div class="top-announcement">L'EXPÉRIENCE QUI TRANSFORMERA VOTRE ÉVÉNEMENT</div>
