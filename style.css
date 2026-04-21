@@ -346,3 +346,77 @@ a { text-decoration: none; color: inherit !important; }
     
     .nav-links { display: none; } /* Cache tout pour laisser le hamburger gérer */
 }
+/* --- CORRECTION FOOTER PREMIUM --- */
+.site-footer {
+    background-color: #050505;
+    padding: 80px 5% 40px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    color: #fff;
+}
+
+.footer-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Divise en 3 colonnes égales */
+    gap: 40px;
+    align-items: start;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Colonne Gauche */
+.footer-brand .footer-logo {
+    font-weight: 900;
+    letter-spacing: 4px;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+.footer-copy {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+}
+
+/* Colonne Centre (Réseaux) */
+.footer-center {
+    align-items: center; /* Centre les icônes horizontalement */
+    text-align: center;
+}
+.footer-title {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    color: var(--gold); /* Ou #d4af37 */
+}
+.footer-socials-icons {
+    display: flex;
+    gap: 25px;
+}
+.footer-socials-icons a {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: 0.3s;
+}
+.footer-socials-icons a:hover {
+    color: var(--gold);
+    transform: translateY(-3px);
+}
+
+/* Adaptation Mobile */
+@media (max-width: 900px) {
+    .footer-main {
+        grid-template-columns: 1fr; /* Tout mettre l'un sur l'autre sur mobile */
+        text-align: center;
+        gap: 60px;
+    }
+    .footer-column {
+        align-items: center;
+    }
+    .footer-brand { order: 3; } /* Met le copyright tout en bas sur mobile */
+    .footer-center { order: 1; } /* Met les réseaux en premier sur mobile */
+    .footer-newsletter { order: 2; }
+}
