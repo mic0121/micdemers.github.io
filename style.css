@@ -9,15 +9,19 @@
 
 body {
     background-color: var(--dark);
-    color: var(--light) !important;
+    color: var(--light);
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
 }
 
-/* Tue le violet des liens */
+/* Forcer la couleur des liens pour éviter le violet des captures */
 a { text-decoration: none; color: inherit !important; }
 
-/* --- NAVIGATION EN OVERLAY --- */
+/* --- ANIMATIONS --- */
+.reveal { opacity: 0; transform: translateY(30px); transition: 1.2s ease-out; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* --- NAVIGATION --- */
 .top-announcement {
     background: var(--gold-gradient);
     color: #000 !important;
@@ -26,8 +30,6 @@ a { text-decoration: none; color: inherit !important; }
     font-weight: 800;
     font-size: 0.75rem;
     letter-spacing: 2px;
-    position: relative;
-    z-index: 1100;
 }
 
 .navbar {
@@ -35,14 +37,12 @@ a { text-decoration: none; color: inherit !important; }
     justify-content: space-between;
     align-items: center;
     padding: 30px 5%;
-    position: absolute; 
+    position: absolute;
     width: 100%;
     z-index: 1000;
-    background: transparent;
 }
 
 .logo-text { font-weight: 900; letter-spacing: 3px; font-size: 1.2rem; }
-
 .nav-links { display: flex; list-style: none; gap: 25px; align-items: center; }
 
 .btn-gold-nav {
@@ -53,27 +53,20 @@ a { text-decoration: none; color: inherit !important; }
     border-radius: 2px;
 }
 
-/* --- HERO & ESPACEMENTS --- */
+/* --- HERO --- */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), 
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
                 url('images/IMG_6112_pp.JPG') no-repeat center center;
     background-size: cover;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
 .main-title { font-size: 4rem; font-weight: 900; letter-spacing: 8px; margin-bottom: 10px; }
-
-.hero-subtitle { 
-    letter-spacing: 5px; 
-    color: var(--gold); 
-    margin-bottom: 50px; /* ESPACE ACCRU : Phrase <-> Bouton */
-    text-transform: uppercase;
-}
+.hero-subtitle { color: var(--gold); letter-spacing: 5px; margin-bottom: 50px; text-transform: uppercase; }
 
 .btn-premium {
     background: var(--gold-gradient);
@@ -81,78 +74,69 @@ a { text-decoration: none; color: inherit !important; }
     padding: 20px 45px;
     font-weight: 900;
     letter-spacing: 3px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
+    display: inline-block;
+    transition: transform 0.3s;
 }
+.btn-premium:hover { transform: scale(1.05); }
 
-/* --- SERVICES & CARDS --- */
-.services-section { padding: 80px 5% 40px 5%; text-align: center; }
-.section-title { letter-spacing: 10px; margin-bottom: 60px; font-weight: 900; }
+/* --- SERVICES (Correction du look laid) --- */
+.services-section { padding: 100px 5%; text-align: center; }
+.section-title { letter-spacing: 8px; margin-bottom: 60px; font-size: 2rem; }
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
+    display: flex; /* Force l'alignement horizontal sur desktop */
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .card {
-    height: 400px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    height: 500px;
     background-size: cover;
     background-position: center;
     position: relative;
     display: flex;
     align-items: flex-end;
-    padding: 20px;
+    padding: 30px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    overflow: hidden;
 }
 
 .card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, transparent 70%);
+    transition: 0.5s;
 }
+
+.card:hover .card-overlay { background: rgba(0,0,0,0.6); }
 
 .card-content { position: relative; z-index: 2; text-align: left; }
+.card-content h3 { font-size: 1.5rem; color: var(--gold); margin-bottom: 10px; }
 
-/* --- CTA FINAL & FOOTER (COLLÉS) --- */
-.final-cta { 
-    padding: 40px 20px; 
-    text-align: center;
-}
+/* --- CTA & FOOTER --- */
+.final-cta { padding: 80px 5%; }
+.cta-text { margin-bottom: 50px; opacity: 0.7; font-size: 1.1rem; }
 
-.cta-text { 
-    margin-bottom: 50px; /* ESPACE ACCRU : Phrase <-> Bouton */
-    opacity: 0.8;
-}
-
-.main-footer {
-    padding: 20px 5% 60px 5%; /* Padding réduit pour coller au bouton */
-    text-align: center;
-}
-
-.copyright { margin-top: 40px; opacity: 0.3; letter-spacing: 2px; }
+.main-footer { padding: 40px 5% 80px 5%; border-top: 1px solid rgba(255,255,255,0.05); }
+.copyright { margin-top: 50px; opacity: 0.2; font-size: 0.7rem; letter-spacing: 2px; }
 
 /* --- MOBILE --- */
-.hamburger { 
-    display: none; 
-    flex-direction: column; 
-    gap: 5px; 
-    cursor: pointer;
-}
-.hamburger span { width: 25px; height: 3px; background: white; }
+.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
+.hamburger span { width: 30px; height: 2px; background: #fff; transition: 0.3s; }
 
 @media (max-width: 900px) {
-    .navbar { position: relative; background: var(--dark); padding: 15px 5%; }
+    .navbar { position: relative; background: var(--dark); }
     .nav-links { 
-        display: none; 
-        flex-direction: column; 
-        position: absolute; 
-        top: 100%; left: 0; width: 100%; 
-        background: var(--dark); 
-        padding: 20px;
+        display: none; position: absolute; top: 100%; left: 0; 
+        width: 100%; background: var(--dark); flex-direction: column; padding: 40px;
     }
     .nav-links.active { display: flex; }
     .hamburger { display: flex; }
-    .main-title { font-size: 2.5rem; }
+    .main-title { font-size: 2.2rem; }
+    .cards { flex-direction: column; align-items: center; }
+    .card { width: 100%; height: 350px; }
 }
