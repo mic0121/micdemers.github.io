@@ -1,5 +1,5 @@
 /* ==========================================
-   1. VARIABLES & BASES
+   1. VARIABLES & FONDATIONS
    ========================================== */
 :root {
     --gold: #D4AF37;
@@ -20,16 +20,32 @@ body {
 }
 
 /* ==========================================
-   2. ANNONCE & NAVIGATION (LA BANNIÈRE)
+   2. ANIMATIONS (LE SPECTACLE)
+   ========================================== */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowText {
+    0% { text-shadow: 0 0 10px rgba(212, 175, 55, 0); }
+    50% { text-shadow: 0 0 20px rgba(212, 175, 55, 0.5); }
+    100% { text-shadow: 0 0 10px rgba(212, 175, 55, 0); }
+}
+
+.fade-in { animation: fadeInUp 1.2s ease-out forwards; }
+
+/* ==========================================
+   3. HEADER & NAVIGATION
    ========================================== */
 .top-announcement {
     background: var(--gold-gradient);
     color: #000;
     text-align: center;
-    padding: 10px 0;
-    font-weight: 800;
+    padding: 12px 0;
+    font-weight: 900;
+    letter-spacing: 3px;
     font-size: 0.75rem;
-    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
@@ -37,112 +53,115 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
-    background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(10px);
+    padding: 25px 5%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(15px);
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 .logo-text {
     color: var(--light);
     text-decoration: none;
     font-weight: 900;
-    letter-spacing: 3px;
-    font-size: 1.1rem;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.2);
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-    align-items: center;
-    margin: 0;
-}
+.nav-links { display: flex; list-style: none; gap: 30px; align-items: center; }
 
 .nav-item {
     color: var(--light);
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.8rem;
-    letter-spacing: 1.5px;
-    font-weight: 500;
+    letter-spacing: 2px;
+    transition: 0.3s;
 }
+
+.nav-item:hover { color: var(--gold); }
 
 .btn-gold-nav {
     background: var(--gold-gradient);
     color: #000 !important;
-    padding: 8px 18px;
+    padding: 10px 20px;
     border-radius: 2px;
-    font-weight: 800;
+    font-weight: 900;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 /* ==========================================
-   3. SECTION SERVICES (LES CARTES PHOTO)
+   4. SERVICES (LE GRID VISUEL)
    ========================================== */
-.services-section {
-    padding: 100px 5%;
-    text-align: center;
-}
+.services-section { padding: 100px 5%; background: #000; }
 
 .section-title {
-    font-size: 2.5rem;
-    letter-spacing: 5px;
-    margin-bottom: 60px;
+    text-align: center;
+    font-size: 2.8rem;
+    letter-spacing: 6px;
     color: var(--gold);
+    margin-bottom: 70px;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
 }
 
 .card {
-    height: 450px;
+    height: 500px;
     background-size: cover;
     background-position: center;
     position: relative;
-    display: flex;
-    align-items: flex-end;
-    border-radius: 4px;
+    border-radius: 5px;
     overflow: hidden;
-    transition: transform 0.4s ease;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
-.card:hover { transform: translateY(-10px); }
+.card:hover {
+    transform: translateY(-15px) scale(1.02);
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
 
 .card-overlay {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.2) 60%);
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 15%, rgba(0,0,0,0.1) 70%);
+    transition: 0.5s;
 }
 
+.card:hover .card-overlay { background: rgba(0,0,0,0.6); }
+
 .card-content {
-    position: relative;
+    position: absolute;
+    bottom: 0;
     padding: 40px;
-    width: 100%;
     z-index: 2;
 }
 
 .card-content h3 {
     color: var(--gold);
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
 }
 
 /* ==========================================
-   4. FIX SÉCURITÉ PAGE À PROPOS
+   5. SÉCURITÉ PAGE À PROPOS
    ========================================== */
 body.page-about-only {
     background-color: var(--dark) !important;
+    background-image: none !important;
 }
 
 .about-page {
-    padding: 100px 20px;
-    max-width: 800px;
+    padding: 120px 20px;
+    max-width: 850px;
     margin: 0 auto;
-    text-align: center;
+    animation: fadeInUp 1s ease-out;
 }
