@@ -399,3 +399,53 @@ a { text-decoration: none; color: inherit !important; }
     opacity: 0.5;
     letter-spacing: 1px;
 }
+@media (max-width: 900px) {
+    /* Cache le menu par défaut */
+    .nav-container {
+        display: none; 
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #050505;
+        padding-top: 100px;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    /* Quand on clique sur le hamburger */
+    .nav-container.active {
+        display: flex;
+    }
+
+    /* Force les liens à être visibles et bien espacés */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    /* Les réseaux tout en bas du menu mobile */
+    .mobile-socials {
+        margin-top: auto;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+    
+    .mobile-socials p {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        color: var(--gold);
+        margin-bottom: 15px;
+    }
+}
