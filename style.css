@@ -1,42 +1,70 @@
-/* TEST DE CONNEXION - SI TU VOIS DU ROUGE, LE CSS EST LU */
-body {
-    background-color: #050505 !important;
-    border-top: 10px solid red !important; 
-}
-
 /* ==========================================
-   BASES PREMIUM (RETOUR AU CODE QUI MARCHE)
+   1. VARIABLES & BASES
    ========================================== */
 :root {
     --gold: #D4AF37;
     --dark: #050505;
     --light: #ffffff;
+    --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F2D472 50%, #D4AF37 100%);
 }
 
-/* On force le noir sur toutes les pages par défaut */
-html, body {
-    background-color: var(--dark) !important;
-    color: var(--light);
+html { scroll-behavior: smooth; }
+
+body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+    background-color: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* NAVIGATION */
+/* ==========================================
+   2. NAVIGATION HAUT DE GAMME
+   ========================================== */
 .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 30px 5%;
     position: absolute;
     width: 100%;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
-.nav-item { color: white; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; }
+.logo-text {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: 4px;
+    font-size: 1.2rem;
+}
 
-/* HERO (ACCUEIL) */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-item {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.nav-item:hover { color: var(--gold); }
+
+/* ==========================================
+   3. HERO SECTION (ACCUEIL)
+   ========================================== */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/IMG_6112_pp.JPG') no-repeat center center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                url('images/IMG_6112_pp.JPG') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -44,14 +72,63 @@ html, body {
     text-align: center;
 }
 
-/* FIX SPÉCIFIQUE PAGE À PROPOS */
+.main-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-premium {
+    display: inline-block;
+    padding: 18px 40px;
+    background: var(--gold-gradient);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 2px;
+    transition: 0.4s;
+    margin-top: 30px;
+}
+
+.btn-premium:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+}
+
+/* ==========================================
+   4. CORRECTIF SÉCURITÉ PAGE À PROPOS
+   ========================================== */
 body.page-about-only {
-    background: #050505 !important;
+    background-color: var(--dark) !important;
+    background-image: none !important;
 }
 
 .about-page {
-    padding: 150px 20px;
+    padding: 160px 20px 80px;
+    max-width: 850px;
+    margin: 0 auto;
     text-align: center;
 }
 
-.about-page p { color: white !important; }
+.about-page h1 {
+    color: var(--gold);
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+}
+
+.about-page p {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.9);
+    text-align: justify;
+    margin-bottom: 25px;
+}
+
+.about-page img {
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    margin-bottom: 40px;
+}
