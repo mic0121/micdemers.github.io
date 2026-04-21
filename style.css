@@ -281,3 +281,68 @@ a { text-decoration: none; color: inherit !important; }
         letter-spacing: 1px;
     }
 }}
+/* --- FIX FINAL NAVIGATION PREMIUM (GRID) --- */
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr; /* 3 parties, celle du milieu un peu plus large */
+    align-items: center;
+    padding: 30px 5%;
+    position: absolute;
+    width: 100%;
+    z-container: 1000;
+}
+
+.logo-container { justify-self: start; }
+.logo-text { font-weight: 900; letter-spacing: 3px; font-size: 1.2rem; white-space: nowrap; }
+
+.nav-links { list-style: none; display: flex; align-items: center; }
+
+/* Styles pour le milieu */
+.nav-middle {
+    justify-self: center; /* Centre le conteneur */
+    justify-content: center; /* Centre les éléments à l'intérieur */
+    gap: 30px;
+}
+.nav-middle a {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+.nav-middle a:hover { color: var(--gold) !important; }
+
+/* Styles pour la droite */
+.nav-right {
+    justify-self: end; /* Aligne le conteneur à droite */
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Espace entre les réseaux et le bouton */
+}
+
+.nav-socials {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espace entre chaque icône de réseau */
+}
+.nav-socials a { color: rgba(255,255,255,0.6); transition: 0.3s; }
+.nav-socials a:hover { color: var(--gold) !important; transform: translateY(-2px); }
+
+.btn-gold-nav {
+    background: var(--gold-gradient);
+    color: #000 !important;
+    padding: 10px 20px;
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 900px) {
+    .navbar { display: flex; justify-content: space-between; padding: 20px 5%; position: relative; background: var(--dark); }
+    .hamburger { display: flex; z-container: 1101; }
+    
+    .logo-container { order: 1; }
+    
+    .nav-links { display: none; } /* Cache tout pour laisser le hamburger gérer */
+}
