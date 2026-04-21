@@ -339,12 +339,54 @@ a { text-decoration: none; color: inherit !important; }
 
 /* --- MOBILE --- */
 @media (max-width: 900px) {
-    .navbar { display: flex; justify-content: space-between; padding: 20px 5%; position: relative; background: var(--dark); }
-    .hamburger { display: flex; z-container: 1101; }
+    /* Cache le menu par défaut */
+    .nav-container {
+        display: none; 
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #050505;
+        padding-top: 100px;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    /* Quand on clique sur le hamburger */
+    .nav-container.active {
+        display: flex;
+    }
+
+    /* Force les liens à être visibles et bien espacés */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    /* Les réseaux tout en bas du menu mobile */
+    .mobile-socials {
+        margin-top: auto;
+        padding-bottom: 50px;
+        text-align: center;
+    }
     
-    .logo-container { order: 1; }
-    
-    .nav-links { display: none; } /* Cache tout pour laisser le hamburger gérer */
+    .mobile-socials p {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        color: var(--gold);
+        margin-bottom: 15px;
+    }
 }
 /* --- FOOTER CENTRALISÉ --- */
 .site-footer {
@@ -398,54 +440,4 @@ a { text-decoration: none; color: inherit !important; }
     font-size: 0.7rem;
     opacity: 0.5;
     letter-spacing: 1px;
-}
-@media (max-width: 900px) {
-    /* Cache le menu par défaut */
-    .nav-container {
-        display: none; 
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: #050505;
-        padding-top: 100px;
-        align-items: center;
-        z-index: 1000;
-    }
-
-    /* Quand on clique sur le hamburger */
-    .nav-container.active {
-        display: flex;
-    }
-
-    /* Force les liens à être visibles et bien espacés */
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        margin-bottom: 50px;
-    }
-
-    .nav-links a {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #fff;
-        text-decoration: none;
-    }
-
-    /* Les réseaux tout en bas du menu mobile */
-    .mobile-socials {
-        margin-top: auto;
-        padding-bottom: 50px;
-        text-align: center;
-    }
-    
-    .mobile-socials p {
-        font-size: 0.7rem;
-        letter-spacing: 2px;
-        color: var(--gold);
-        margin-bottom: 15px;
-    }
 }
