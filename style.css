@@ -444,3 +444,46 @@ a { text-decoration: none; color: inherit !important; }
     opacity: 0.5;
     letter-spacing: 1px;
 }
+/* --- BASE NAVBAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2000;
+}
+
+/* --- DESKTOP --- */
+.nav-menu { display: flex; align-items: center; gap: 30px; }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { color: #fff; text-decoration: none; font-size: 0.8rem; font-weight: 600; }
+.nav-social-mobile { display: none; } /* Caché sur bureau */
+
+/* --- MOBILE --- */
+@media (max-width: 900px) {
+    .hamburger { display: flex; flex-direction: column; gap: 6px; cursor: pointer; z-index: 2100; }
+    .hamburger span { width: 30px; height: 2px; background: #fff; transition: 0.3s; }
+
+    .nav-menu {
+        display: none; /* Caché par défaut */
+        flex-direction: column;
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100vh;
+        background: #000;
+        padding-top: 120px;
+        align-items: center;
+    }
+
+    .nav-menu.active { display: flex; } /* S'affiche quand actif */
+
+    .nav-links { flex-direction: column; gap: 40px; text-align: center; }
+    .nav-links a { font-size: 1.5rem; }
+
+    .nav-social-mobile { display: block; margin-top: auto; padding-bottom: 60px; text-align: center; }
+    .social-label { font-size: 0.6rem; letter-spacing: 3px; color: #d4af37; margin-bottom: 20px; }
+    .social-icons-wrapper { display: flex; gap: 30px; justify-content: center; }
+}
