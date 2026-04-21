@@ -104,3 +104,32 @@ a { text-decoration: none; color: inherit !important; }
 
 .card-content { position: relative; z-index: 2; padding: 40px; text-align: left; }
 .card-content h3 { color: var(--gold); font-size: 2rem; margin-bottom: 10px; }
+/* --- SECTION SOCIAL PROOF --- */
+.social-proof {
+    background-color: #000000;
+    padding: 100px 5%;
+    text-align: center;
+}
+
+.proof-title {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    letter-spacing: 8px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.gold-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 0 auto 20px;
+}
+
+.proof-subtitle {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    font-weight: 300;
+}
