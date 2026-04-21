@@ -172,3 +172,26 @@ a { text-decoration: none; color: inherit !important; }
     background: #fff;
     transform: translateY(-5px);
 }
+/* --- CORRECTION IMAGE À PROPOS --- */
+body.page-about-only .hero {
+    height: 60vh; /* Réduit la photo à 60% de l'écran au lieu de 100% */
+    background-position: top center; /* Garde le focus sur ton visage */
+}
+
+.about-content {
+    max-width: 800px;
+    margin: -50px auto 100px; /* Remonte un peu le texte sur la photo pour le style */
+    padding: 40px;
+    background: var(--dark);
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    border-top: 2px solid var(--gold);
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #fff;
+}
