@@ -11,31 +11,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Demers | Mentaliste #1 à Québec</title>
-    <link rel="stylesheet" href="style.css?v=2026.3">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2026.4">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
 <header>
     <div class="top-announcement">L'EXPÉRIENCE QUI TRANSFORMERA VOTRE ÉVÉNEMENT</div>
-    <div class="nav-left">
-    <div class="logo hide-on-mobile">
-        <a href="index.html">
-            <img src="images/logo.PNG" alt="Michael Demers Logo" style="height: 65px; width: auto; object-fit: contain;">
-        </a>
-    </div>
-</div>
-        <div class="hamburger" id="hamburger">
-            <span></span><span></span><span></span>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo hide-on-mobile">
+                <a href="index.html">
+                    <img src="images/logo.PNG" alt="Michael Demers Logo">
+                </a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
         </div>
 
         <div class="nav-center-links" id="nav-menu">
             <ul class="nav-links">
-                <li><a href="about.html" class="hover-underline">L'ARTISTE</a></li>
-                <li><a href="#services" class="hover-underline">SERVICES</a></li>
-                <li><a href="soumission.html" class="hover-underline">CONTACT</a></li>
-                <li><a href="billets.html" class="btn-gold-nav hover-glow">BILLETTERIE</a></li>
+                <li><a href="about.html">L'ARTISTE</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="soumission.html">CONTACT</a></li>
+                <li><a href="billets.html" class="btn-gold-nav">BILLETTERIE</a></li>
             </ul>
         </div>
 
@@ -54,24 +55,21 @@
     <div class="hero-content reveal">
         <h1 class="main-title">MICHAEL DEMERS</h1>
         <p class="hero-subtitle">MENTALISTE HAUT DE GAMME</p>
-        <a href="soumission.html" class="btn-premium hover-lift">RÉSERVER L'EXPÉRIENCE</a>
+        <a href="soumission.html" class="btn-premium">RÉSERVER L'EXPÉRIENCE</a>
     </div>
 </section>
 
-<section class="social-proof-elite">
-    <div class="container-proof reveal">
+<section class="social-proof-section">
+    <div class="container reveal">
         <div class="stars-elite">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
-        <h2 class="proof-title-elite">L'ÉLITE DU MENTALISME À QUÉBEC</h2>
-        <div class="gold-divider-center"></div>
-        <section class="social-proof-section">
-    <div class="container">
         <p class="signature-text">
             Plus qu’une performance, une <span class="gold-text">signature unique</span> gravée dans la mémoire de milliers de spectateurs.
         </p>
     </div>
 </section>
+
 <section id="services" class="services-section">
     <h2 class="section-title reveal">SERVICES EXCLUSIFS</h2>
     <div class="cards">
@@ -94,7 +92,7 @@
     <h2>Prêt à transformer votre événement ?</h2>
     <p>Les dates pour 2026 s'envolent rapidement.</p>
     <div class="btn-wrapper-final">
-        <a href="soumission.html" class="btn-premium btn-final-adjust hover-lift">VÉRIFIER LES DISPONIBILITÉS</a>
+        <a href="soumission.html" class="btn-premium">VÉRIFIER LES DISPONIBILITÉS</a>
     </div>
 </section>
 
@@ -104,9 +102,7 @@
 
 <footer class="site-footer">
     <div class="footer-content">
-        <div class="footer-section">
-            <p class="footer-copy">© 2026 MICHAEL DEMERS | QUÉBEC</p>
-        </div>
+        <p>© 2026 MICHAEL DEMERS | QUÉBEC</p>
         <div class="nav-socials">
             <a href="https://instagram.com/michaeldemers_" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://tiktok.com/@Michael.demers52" target="_blank"><i class="fab fa-tiktok"></i></a>
@@ -117,22 +113,32 @@
 </footer>
 
 <script>
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
 
-hamburger.addEventListener('click', () => {
-    // toggle() ajoute la classe si elle n'est pas là, et l'enlève si elle y est
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// OPTIONNEL : Fermer le menu quand on clique sur un lien
-document.querySelectorAll('.nav-links li a').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
-});
+
+    document.querySelectorAll('.nav-links li a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Reveal Animation
+    window.addEventListener('scroll', () => {
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(r => {
+            let windowHeight = window.innerHeight;
+            let revealTop = r.getBoundingClientRect().top;
+            if (revealTop < windowHeight - 100) {
+                r.classList.add('active');
+            }
+        });
+    });
 </script>
 </body>
 </html>
