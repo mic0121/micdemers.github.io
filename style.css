@@ -489,3 +489,96 @@ hr {
         margin: 0 auto 30px auto !important;
     }
 }
+/* --- Page Performances --- */
+.page-performance {
+    background-color: #000;
+    color: #fff;
+}
+
+.perf-hero {
+    padding: 150px 20px 60px;
+    text-align: center;
+}
+
+.perf-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.perf-item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 120px;
+}
+
+/* Alterne l'ordre (Image à gauche, texte à droite) */
+.perf-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.perf-text {
+    flex: 1;
+}
+
+.perf-text h2 {
+    font-size: 2.2rem;
+    color: #d4af37;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.perf-text p {
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+.perf-details {
+    list-style: none;
+    padding: 0;
+}
+
+.perf-details li {
+    color: #d4af37;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.perf-details i {
+    margin-right: 10px;
+    width: 20px;
+}
+
+.perf-image {
+    flex: 1;
+}
+
+.perf-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* Tes photos ne seront pas écrasées */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.footer-cta {
+    text-align: center;
+    padding: 80px 20px;
+    background: #0a0a0a;
+    border-top: 1px solid #1a1a1a;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    .perf-item, .perf-item.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .perf-image img {
+        height: 300px;
+    }
+}
