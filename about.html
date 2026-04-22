@@ -3,53 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>À propos | Michael Demers Mentaliste</title>
-    <meta name="description" content="Découvrez le parcours de Michael Demers, mentaliste professionnel spécialisé en événements haut de gamme.">
+    <title>L'Artiste | Michael Demers Mentaliste</title>
+    <meta name="description" content="Découvrez le parcours de Michael Demers, mentaliste professionnel à Québec.">
     
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=2026.4">
 </head>
-    
-<body class="page-about-only"> 
-    
+<body class="page-about"> 
+
 <header>
     <nav class="navbar">
-        <a href="index.html" class="nav-item">Retour à l'accueil</a>
-        <div class="hamburger" id="hamburger">
-            <span></span><span></span><span></span>
+        <div class="nav-left">
+            <div class="logo">MICHAEL DEMERS</div>
         </div>
-    </nav>  
+        <div class="nav-center-links">
+            <ul class="nav-links">
+                <li><a href="index.html" class="hover-underline">RETOUR À L'ACCUEIL</a></li>
+            </ul>
+        </div>
+    </nav>
 </header>
 
-<main>
-    <section class="about-page">
-        <h1>L'Artiste</h1>
-        <img src="images/IMG_6513.JPG" alt="Michael Demers | Mentaliste"> 
+<main class="about-container">
+    <section class="about-hero">
+        <div class="about-grid">
+            <div class="about-image-wrapper reveal">
+                <img src="images/IMG_6513.JPG" alt="Michael Demers | Mentaliste" class="about-portrait">
+                <div class="gold-border-decoration"></div>
+            </div>
 
-        <div class="about-content">
-            <p>
-            Mentaliste professionnel depuis plus de 8 ans, Michael Demers cultive l’art de l’impossible depuis l'enfance. 
-            Bien au-delà du simple divertissement, il se spécialise dans l’exploration des mécanismes de l’esprit humain, 
-            utilisant la psychologie appliquée, la suggestion et l’influence subtile pour créer des expériences immersives hors du commun.
-            </p>
+            <div class="about-text-content reveal">
+                <h1 class="section-title" style="text-align: left; margin-bottom: 20px;">L'ARTISTE</h1>
+                <div class="gold-divider" style="margin: 0 0 30px 0;"></div>
+                
+                <p class="about-lead">
+                    Mentaliste professionnel depuis plus de 8 ans, Michael Demers cultive l’art de l’impossible depuis l'enfance.
+                </p>
 
-            <p>
-            Sa maîtrise repose sur une compréhension fine de la communication non-verbale et des biais cognitifs, 
-            permettant de captiver les publics les plus exigeants. Reconnu pour son approche élégante et humaine, il transforme 
-            chaque interaction en un laboratoire de l’invisible, parfaitement adapté aux contextes corporatifs et aux événements haut de gamme.
-            </p>
+                <p>
+                    Bien au-delà du simple divertissement, il se spécialise dans l’exploration des mécanismes de l’esprit humain, 
+                    utilisant la psychologie appliquée, la suggestion et l’influence subtile pour créer des expériences immersives hors du commun.
+                </p>
 
-            <p>
-            Qu’il s’agisse de soirées privées ou de galas d'envergure, chaque prestation est conçue sur mesure. 
-            Son objectif : offrir un moment unique et marquant, où la frontière entre le réel et le possible s'efface
-            pour s'aligner parfaitement avec les objectifs de votre événement.
-            </p>
+                <p>
+                    Sa maîtrise repose sur une compréhension fine de la communication non-verbale et des biais cognitifs, 
+                    permettant de captiver les publics les plus exigeants. Reconnu pour son approche élégante et humaine, il transforme 
+                    chaque interaction en un laboratoire de l’invisible.
+                </p>
+
+                <div class="about-cta">
+                    <a href="index.html#contact" class="btn-premium hover-lift">RÉSERVER UNE DATE</a>
+                </div>
+            </div>
         </div>
     </section>
 </main>
 
-<footer>
-    <p>© 2026 Michael Demers · Mentaliste</p>
+<footer class="site-footer">
+    <div class="footer-content">
+        <p class="footer-copy">© 2026 MICHAEL DEMERS | QUÉBEC</p>
+        <div class="nav-socials">
+            <a href="https://instagram.com/michaeldemers_" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@Michael.demers52" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://facebook.com/michaelmagicien" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
 </footer>
 
+<script>
+    // Réactivation de l'effet reveal pour cette page
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
