@@ -26,14 +26,15 @@ body {
 }
 
 /* --- HEADER & NAVIGATION --- */
+/* --- FIX : On force le Header à flotter --- */
 header {
     width: 100%;
-    position: absolute;
+    position: absolute; /* Crucial : il ne pousse plus le contenu du bas */
     top: 0;
     left: 0;
     z-index: 9999;
+    background: transparent !important;
 }
-
 .top-announcement {
     background: var(--gold) !important;
     color: #000 !important;
@@ -150,16 +151,18 @@ header {
     .main-title { font-size: 2.5rem; letter-spacing: 5px; }
 }
 /* --- SECTION HERO STABLE --- */
+
+/* --- FIX : Centrage Mathématique du Hero --- */
 .hero {
     height: 100vh;
+    min-height: 700px; /* Évite que ça s'écrase sur petit écran */
     width: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('images/IMG_6112_pp.JPG') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; /* Important pour le centrage */
-    overflow: hidden;
+    display: flex !important;
+    align-items: center !important;     /* Centre verticalement */
+    justify-content: center !important;  /* Centre horizontalement */
+    text-align: center !important;
+    position: relative;
+    padding-top: 100px; /* Compense la hauteur du header sans décaler le flex */
 }
 
 .hero-content {
@@ -167,30 +170,20 @@ header {
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    text-align: center !important;
     width: 100% !important;
-    max-width: 1200px; /* Empêche le texte de s'étaler trop sur les très grands écrans */
-    padding: 0 20px;
-    z-index: 5; /* Passe par-dessus les éventuels blocs invisibles */
+    z-index: 10;
 }
 
-/* On verrouille les espacements pour que rien ne bouge */
+/* --- Ajustement du Titre et Sous-titre --- */
 .main-title {
-    font-size: clamp(2.5rem, 8vw, 4.5rem) !important; /* Taille fluide : s'adapte à l'écran */
-    font-weight: 900;
-    letter-spacing: 12px;
-    margin-bottom: 15px !important;
-    width: 100%;
+    margin: 0 auto 10px auto !important;
+    display: block !important;
 }
 
 .hero-subtitle {
-    color: var(--gold);
-    font-size: clamp(0.9rem, 2vw, 1.2rem) !important;
-    letter-spacing: 8px;
-    margin-bottom: 45px !important;
-    width: 100%;
+    margin: 0 auto 40px auto !important;
+    display: block !important;
 }
-
 .btn-premium {
     display: inline-block !important;
     width: auto !important;
