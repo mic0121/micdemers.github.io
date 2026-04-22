@@ -25,29 +25,31 @@
             <div class="logo">MICHAEL DEMERS</div>
         </div>
 
-        <div class="nav-center-socials">
-            <a href="https://instagram.com/michaeldemers_" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com/@Michael.demers52" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://facebook.com/michaelmagicien" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://youtube.com/@MichaelDemers52" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-
         <div class="hamburger" id="hamburger">
             <span></span><span></span><span></span>
         </div>
 
-        <div class="nav-right-container" id="nav-menu">
+        <div class="nav-center-links" id="nav-menu">
             <ul class="nav-links">
                 <li><a href="#artiste">L'ARTISTE</a></li>
                 <li><a href="#services">SERVICES</a></li>
                 <li><a href="#contact">CONTACT</a></li>
-                <li><a href="#billetterie" class="btn-gold-nav">BILLETTERIE</a></li>
             </ul>
+        </div>
+
+        <div class="nav-right-actions">
+            <div class="nav-socials-top">
+                <a href="https://instagram.com/michaeldemers_" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com/@Michael.demers52" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://facebook.com/michaelmagicien" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://youtube.com/@MichaelDemers52" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            <a href="#billetterie" class="btn-gold-nav">BILLETTERIE</a>
         </div>
     </nav>
 </header>
 
-<section class="hero">
+<section id="artiste" class="hero">
     <div class="hero-content reveal">
         <h1 class="main-title">MICHAEL DEMERS</h1>
         <p class="hero-subtitle">MENTALISTE HAUT DE GAMME</p>
@@ -68,22 +70,22 @@
 
 <section id="services" class="services-section">
     <h2 class="section-title reveal">SERVICES EXCLUSIFS</h2>
-    <div class="cards reveal">
-        <div class="card" style="background-image: url('images/prive.heic');">
+    <div class="cards">
+        <div class="card reveal" style="background-image: url('images/prive.heic');">
             <div class="card-overlay"></div>
             <div class="card-content">
                 <h3>Corporatif</h3>
                 <p>L'excellence pour vos événements d'affaires.</p>
             </div>
         </div>
-        <div class="card" style="background-image: url('images/oneil.HEIC');">
+        <div class="card reveal" style="background-image: url('images/oneil.HEIC');" style="transition-delay: 0.2s;">
             <div class="card-overlay"></div>
             <div class="card-content">
                 <h3>Privé & VIP</h3>
                 <p>Une expérience intime et mystérieuse.</p>
             </div>
         </div>
-        <div class="card" style="background-image: url('images/gala.JPG');">
+        <div class="card reveal" style="background-image: url('images/gala.JPG');" style="transition-delay: 0.4s;">
             <div class="card-overlay"></div>
             <div class="card-content">
                 <h3>Galas & Scène</h3>
@@ -92,19 +94,19 @@
         </div>
     </div>
 
-    <div class="final-cta reveal">
+    <div id="contact" class="final-cta reveal">
         <h2 class="cta-title">Prêt à transformer votre événement ?</h2>
         <p class="cta-text">Les dates pour 2026 s'envolent rapidement. Assurez la présence du mentaliste #1 à Québec.</p>
-        <a href="soumission.html" class="btn-premium">VÉRIFIER LES DISPONIBILITÉS</a>
+        <a href="soumission.html" class="btn-premium spacing-top">VÉRIFIER LES DISPONIBILITÉS</a>
     </div>
 
-    <div class="footer-mailerlite reveal">
+    <div id="billetterie" class="footer-mailerlite reveal">
         <div class="ml-embedded" data-form="m0Ba1D"></div>
     </div>
 </section>
 
 <footer class="site-footer">
-    <div class="footer-content">
+    <div class="footer-content reveal">
         <div class="footer-section">
             <div class="footer-logo">MICHAEL DEMERS</div>
             <p class="footer-copy">© 2026 MICHAEL DEMERS | QUÉBEC</p>
@@ -136,12 +138,16 @@
         });
     }
 
-    // ANIMATION REVEAL
+    // ANIMATION REVEAL (Apparaît au scroll)
+    const observerOptions = { threshold: 0.15 };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('visible');
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
         });
-    }, { threshold: 0.1 });
+    }, observerOptions);
+
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
