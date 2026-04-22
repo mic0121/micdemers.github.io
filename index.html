@@ -11,27 +11,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Demers | Mentaliste #1 à Québec</title>
-    <link rel="stylesheet" href="style.css?v=2026.1">
+    <link rel="stylesheet" href="style.css?v=2026.2">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-</body>
-<script>
-        // Le code JavaScript va ICI, entre les balises <script>
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
-
-        hamburger.onclick = function() {
-            navMenu.classList.toggle('active');
-        };
-    </script>
-</body>
-</html>
+<body>
 
 <header>
     <div class="top-announcement">L'EXPÉRIENCE QUI TRANSFORMERA VOTRE ÉVÉNEMENT</div>
-    
-    <nav class="navbar overlay">
+    <nav class="navbar">
         <div class="nav-left">
             <div class="logo hide-on-mobile">MICHAEL DEMERS</div>
         </div>
@@ -42,19 +30,17 @@
 
         <div class="nav-center-links" id="nav-menu">
             <ul class="nav-links">
-                <li><a href="#about.html" class="hover-underline">L'ARTISTE</a></li>
+                <li><a href="#artiste" class="hover-underline">L'ARTISTE</a></li>
                 <li><a href="#services" class="hover-underline">SERVICES</a></li>
-                <li><a href="#soumission.html" class="hover-underline">CONTACT</a></li>
-                </li><a href="#billets.html" class="btn-gold-nav hover-glow">BILLETTERIE</a></li>
+                <li><a href="#contact" class="hover-underline">CONTACT</a></li>
+                <li><a href="billets.html" class="btn-gold-nav hover-glow">BILLETTERIE</a></li>
             </ul>
         </div>
 
-        <div class="nav-right-actions">
+        <div class="nav-right-actions hide-on-mobile">
             <div class="nav-socials-top">
                 <a href="https://instagram.com/michaeldemers_" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://tiktok.com/@Michael.demers52" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://facebook.com/michaelmagicien" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://youtube.com/@MichaelDemers52" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </nav>
@@ -71,17 +57,11 @@
 <section class="social-proof-elite">
     <div class="container-proof reveal">
         <div class="stars-elite">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
         <h2 class="proof-title-elite">L'ÉLITE DU MENTALISME À QUÉBEC</h2>
         <div class="gold-divider-center"></div>
-        <p class="proof-subtitle-elite">
-            Des <strong>milliers de spectateurs conquis</strong> par une expérience qui défie la logique.
-        </p>
+        <p class="proof-subtitle-elite">Des <strong>milliers de spectateurs conquis</strong> par une expérience qui défie la logique.</p>
     </div>
 </section>
 
@@ -90,30 +70,21 @@
     <div class="cards">
         <div class="card reveal" style="background-image: url('images/prive.heic');">
             <div class="card-overlay"></div>
-            <div class="card-content">
-                <h3>Corporatif</h3>
-                <p>L'excellence pour vos événements d'affaires.</p>
-            </div>
+            <div class="card-content"><h3>Corporatif</h3><p>L'excellence pour vos événements d'affaires.</p></div>
         </div>
         <div class="card reveal" style="background-image: url('images/oneil.HEIC');">
             <div class="card-overlay"></div>
-            <div class="card-content">
-                <h3>Privé & VIP</h3>
-                <p>Une expérience intime et mystérieuse.</p>
-            </div>
+            <div class="card-content"><h3>Privé & VIP</h3><p>Une expérience intime et mystérieuse.</p></div>
         </div>
         <div class="card reveal" style="background-image: url('images/gala.JPG');">
             <div class="card-overlay"></div>
-            <div class="card-content">
-                <h3>Galas & Scène</h3>
-                <p>Une performance d'impact maximale.</p>
-            </div>
+            <div class="card-content"><h3>Galas & Scène</h3><p>Une performance d'impact maximale.</p></div>
         </div>
     </div>
 
     <div id="contact" class="final-cta-section reveal">
         <h2 class="cta-title">Prêt à transformer votre événement ?</h2>
-        <p class="cta-text">Les dates pour 2026 s'envolent rapidement. Assurez la présence du mentaliste #1 à Québec.</p>
+        <p class="cta-text">Les dates pour 2026 s'envolent rapidement.</p>
         <div class="btn-wrapper-final">
             <a href="soumission.html" class="btn-premium btn-final-adjust hover-lift">VÉRIFIER LES DISPONIBILITÉS</a>
         </div>
@@ -125,7 +96,7 @@
 </section>
 
 <footer class="site-footer">
-    <div class="footer-content reveal">
+    <div class="footer-content">
         <div class="footer-section">
             <div class="footer-logo">MICHAEL DEMERS</div>
             <p class="footer-copy">© 2026 MICHAEL DEMERS | QUÉBEC</p>
@@ -144,21 +115,22 @@
     const navMenu = document.getElementById('nav-menu');
 
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
-            // Ajoute/Enlève la classe 'active' pour afficher le menu
+        hamburger.onclick = function() {
             navMenu.classList.toggle('active');
-            // Ajoute une animation au hamburger lui-même (si tu as le CSS pour)
-            hamburger.classList.toggle('toggle');
-        });
-
-        // Ferme le menu quand on clique sur un lien
+        };
+        // Ferme le menu au clic sur un lien mobile
         document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('toggle');
-            });
+            link.onclick = () => navMenu.classList.remove('active');
         });
     }
+
+    // Animation au défilement
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
