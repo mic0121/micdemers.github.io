@@ -3,88 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Artiste | Michael Demers Mentaliste</title>
-    <meta name="description" content="Découvrez le parcours de Michael Demers, mentaliste professionnel à Québec.">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=2026.4">
+    <title>L'Artiste | Michael Demers</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #050505; color: white; margin: 0; }
+        
+        .about-section {
+            padding: 180px 20px 100px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            letter-spacing: 8px;
+            color: #D4AF37;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .about-content {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #eee;
+            text-align: justify;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .highlight-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: #D4AF37;
+            margin: 40px 0;
+            display: block;
+        }
+
+        /* Rappel du fix pour le logo sur About aussi */
+        @media (max-width: 768px) {
+            .logo { display: none !important; }
+            .about-section { padding-top: 120px; }
+        }
+    </style>
 </head>
-<body class="page-about"> 
+<body>
 
-<header>
-    <nav class="navbar">
-        <div class="nav-left">
-            <div class="logo">MICHAEL DEMERS</div>
-        </div>
-        <div class="nav-center-links">
-            <ul class="nav-links">
-                <li><a href="index.html" class="hover-underline">RETOUR À L'ACCUEIL</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
+    <header>
+        </header>
 
-<main class="about-container">
-    <section class="about-hero">
-        <div class="about-grid">
-            <div class="about-image-wrapper reveal">
-                <img src="images/IMG_6513.JPG" alt="Michael Demers | Mentaliste" class="about-portrait">
-                <div class="gold-border-decoration"></div>
-            </div>
-
-            <div class="about-text-content reveal">
-                <h1 class="section-title" style="text-align: left; margin-bottom: 20px;">L'ARTISTE</h1>
-                <div class="gold-divider" style="margin: 0 0 30px 0;"></div>
-                
-                <p class="about-lead">
-                    Mentaliste professionnel depuis plus de 8 ans, Michael Demers cultive l’art de l’impossible depuis l'enfance.
-                </p>
-
-                <p>
-                    Bien au-delà du simple divertissement, il se spécialise dans l’exploration des mécanismes de l’esprit humain, 
-                    utilisant la psychologie appliquée, la suggestion et l’influence subtile pour créer des expériences immersives hors du commun.
-                </p>
-
-                <p>
-                    Sa maîtrise repose sur une compréhension fine de la communication non-verbale et des biais cognitifs, 
-                    permettant de captiver les publics les plus exigeants. Reconnu pour son approche élégante et humaine, il transforme 
-                    chaque interaction en un laboratoire de l’invisible.
-                </p>
-
-                <div class="about-cta">
-                    <a href="soumission.html" class="btn-premium hover-lift">RÉSERVER UNE DATE</a>
-                </div>
-            </div>
+    <section class="about-section">
+        <h1 class="about-title">L'Artiste</h1>
+        
+        <div class="about-content">
+            <p>
+                Basé à Québec, Michael Demers redéfinit l'art de l'impossible. Spécialisé dans le mentalisme haut de gamme, il transforme chaque événement en une expérience psychologique immersive où la réalité semble se plier à sa volonté.
+            </p>
+            
+            <span class="highlight-text">"L'élégance du mystère, la précision de l'esprit."</span>
+            
+            <p>
+                Que ce soit pour des galas corporatifs ou des événements privés exclusifs, son approche allie charisme, psychologie et une maîtrise technique qui laisse les spectateurs les plus sceptiques sans voix. Plus qu'une performance, c'est un voyage aux frontières de la perception humaine.
+            </p>
         </div>
     </section>
-</main>
 
-<footer class="site-footer">
-    <div class="footer-content">
-        <p class="footer-copy">© 2026 MICHAEL DEMERS | QUÉBEC</p>
-        <div class="nav-socials">
-            <a href="https://instagram.com/michaeldemers_" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com/@Michael.demers52" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://facebook.com/michaelmagicien" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://youtube.com/@Michaeldemers52" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
-</footer>
-
-<script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { 
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px" // Déclenche l'effet un peu avant que l'élément soit au centre
-    });
-    
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
-</body>
+    </body>
 </html>
