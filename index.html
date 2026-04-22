@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Demers | Mentaliste #1 à Québec</title>
-    <link rel="stylesheet" href="style.css?v=2026">
+    <link rel="stylesheet" href="style.css?v=2026.1">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -31,10 +31,9 @@
 
         <div class="nav-center-links" id="nav-menu">
             <ul class="nav-links">
-                <li><a href="#about.html" class="hover-underline">L'ARTISTE</a></li>
+                <li><a href="#artiste" class="hover-underline">L'ARTISTE</a></li>
                 <li><a href="#services" class="hover-underline">SERVICES</a></li>
-                <li><a href="#soumission.html" class="hover-underline">CONTACT</a></li>
-                <li><a href="#billets.html" class="btn-gold-nav hover-glow">BILLETTERIE</a>         
+                <li><a href="#contact" class="hover-underline">CONTACT</a></li>
             </ul>
         </div>
 
@@ -45,6 +44,7 @@
                 <a href="https://facebook.com/michaelmagicien" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="https://youtube.com/@MichaelDemers52" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
+            <a href="#billetterie" class="btn-gold-nav hover-glow">BILLETTERIE</a>
         </div>
     </nav>
 </header>
@@ -57,23 +57,23 @@
     </div>
 </section>
 
-<section class="social-proof">
+<section class="social-proof-elite">
     <div class="container-proof reveal">
-        <div class="stars">
+        <div class="stars-elite">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
         </div>
-        <h2 class="proof-title">L'ÉLITE DU MENTALISME À QUÉBEC</h2>
-        <div class="gold-divider"></div>
-        <p class="proof-subtitle">
+        <h2 class="proof-title-elite">L'ÉLITE DU MENTALISME À QUÉBEC</h2>
+        <div class="gold-divider-center"></div>
+        <p class="proof-subtitle-elite">
             Des <strong>milliers de spectateurs conquis</strong> par une expérience qui défie la logique.
         </p>
     </div>
 </section>
-    
+
 <section id="services" class="services-section">
     <h2 class="section-title reveal">SERVICES EXCLUSIFS</h2>
     <div class="cards">
@@ -100,11 +100,11 @@
         </div>
     </div>
 
-    <div id="contact" class="final-cta reveal">
+    <div id="contact" class="final-cta-section reveal">
         <h2 class="cta-title">Prêt à transformer votre événement ?</h2>
         <p class="cta-text">Les dates pour 2026 s'envolent rapidement. Assurez la présence du mentaliste #1 à Québec.</p>
-        <div class="btn-container">
-            <a href="soumission.html" class="btn-premium hover-lift">VÉRIFIER LES DISPONIBILITÉS</a>
+        <div class="btn-wrapper-final">
+            <a href="soumission.html" class="btn-premium btn-final-adjust hover-lift">VÉRIFIER LES DISPONIBILITÉS</a>
         </div>
     </div>
 
@@ -137,19 +137,13 @@
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('toggle');
         };
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.onclick = () => {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('toggle');
-            };
-        });
     }
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('visible');
         });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
