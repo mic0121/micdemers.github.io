@@ -117,24 +117,22 @@
 </footer>
 
 <script>
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
 
-    if (hamburger && navMenu) {
-        hamburger.onclick = function() {
-            navMenu.classList.toggle('active');
-        };
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.onclick = () => navMenu.classList.remove('active');
-        });
-    }
+hamburger.addEventListener('click', () => {
+    // toggle() ajoute la classe si elle n'est pas là, et l'enlève si elle y est
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+// OPTIONNEL : Fermer le menu quand on clique sur un lien
+document.querySelectorAll('.nav-links li a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
 </script>
 </body>
 </html>
