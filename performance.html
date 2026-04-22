@@ -4,77 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Performances | Michael Demers Mentaliste</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=2026.5"> 
 </head>
 <body class="page-performance">
     
-    <header class="section-title" style="margin-top: 80px;">
-        <h1>Performances</h1>
-        <p class="subtitle">Des expériences sur mesure pour vos événements corporatifs et privés.</p>
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="logo">MICHAEL DEMERS</div>
+            </div>
+            <div class="nav-center-links">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="hover-underline">ACCUEIL</a></li>
+                    <li><a href="about.html" class="hover-underline">L'ARTISTE</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
-    <main class="services-container">
+    <section class="perf-hero reveal">
+        <h1 class="section-title">PERFORMANCES</h1>
+        <div class="gold-divider-center"></div>
+        <p class="subtitle">Des expériences sur mesure pour vos événements corporatifs et privés.</p>
+    </section>
 
-        <section class="service-item">
-            <div class="service-text">
+    <main class="perf-container">
+
+        <section class="perf-item reveal">
+            <div class="perf-text">
                 <h2>Spectacle de Scène</h2>
                 <p>
                     Une immersion totale dans l'impossible. Ce spectacle allie humour, 
                     psychologie et lecture de pensée pour captiver une audience complète. 
                     Idéal pour les galas, congrès et événements de grande envergure.
                 </p>
-                <ul style="list-style: none; padding: 0; color: #d4af37; font-size: 0.9rem;">
-                    <li>⚡ Durée : 45 à 75 minutes</li>
-                    <li>👥 Public : 50 à 500+ personnes</li>
+                <ul class="perf-details">
+                    <li><i class="fas fa-bolt"></i> Durée : 45 à 75 minutes</li>
+                    <li><i class="fas fa-users"></i> Public : 50 à 500+ personnes</li>
                 </ul>
             </div>
-            <div class="service-image">
+            <div class="perf-image">
                 <img src="images/gala.JPG" alt="Michael Demers sur scène">
             </div>
         </section>
 
-        <section class="service-item">
-            <div class="service-text">
+        <section class="perf-item reverse reveal">
+            <div class="perf-text">
                 <h2>Cocktail & Close-up</h2>
                 <p>
                     Le mentalisme à quelques centimètres de vos yeux. Je circule parmi vos 
                     invités pour briser la glace et créer des moments d'émerveillement 
                     spontanés. Parfait pour favoriser les échanges durant vos 5 à 7.
                 </p>
-                <ul style="list-style: none; padding: 0; color: #d4af37; font-size: 0.9rem;">
-                    <li>⚡ Format : Déambulatoire</li>
-                    <li>👥 Public : Petits groupes</li>
+                <ul class="perf-details">
+                    <li><i class="fas fa-bolt"></i> Format : Déambulatoire</li>
+                    <li><i class="fas fa-users"></i> Public : Petits groupes</li>
                 </ul>
             </div>
-            <div class="service-image">
+            <div class="perf-image">
                 <img src="images/closeup.jpg" alt="Mentalisme de proximité">
             </div>
         </section>
         
-        <section class="service-item">
-            <div class="service-text">
+        <section class="perf-item reveal">
+            <div class="perf-text">
                 <h2>SECRETS - Le Spectacle</h2>
                 <p>
                     On a tous des secrets. Certains qu’on garde… et d’autres qu’on pense impossibles à découvrir.
-                    Dans SECRETS, je vous invite à vivre une expérience où tout se passe dans votre esprit… et pourtant, tout devient visible.
-                    Des centaines de personnes ont déjà vu ce spectacle, y ont participé et l'ont approuvé. Serez-vous les prochains ? 
+                    Dans SECRETS, je vous invite à vivre une expérience où tout se passe dans votre esprit.
                 </p>
-                <ul style="list-style: none; padding: 0; color: #d4af37; font-size: 0.9rem;">
-                    <li>⚡ Durée : 75 minutes</li>
-                    <li>👥 Public : Minimum de 50 personnes</li>
+                <ul class="perf-details">
+                    <li><i class="fas fa-bolt"></i> Durée : 75 minutes</li>
+                    <li><i class="fas fa-users"></i> Public : Minimum de 50 personnes</li>
                 </ul>
             </div>
-            <div class="service-image">
-                <img src="images/SECRETS 2026.005.JPEG alt="Affiche de SECRETS">
+            <div class="perf-image">
+                <img src="images/SECRETS 2026.005.JPEG" alt="Affiche de SECRETS">
             </div>
         </section>
 
     </main>
 
-    <footer style="text-align: center; margin-top: 100px; padding-bottom: 50px;">
-        <p>Vous avez un projet ou une idée spécifique en tête ?</p>
-        <a href="soumission.html" class="btn-primary">Demander un devis personnalisé</a>
+    <footer class="site-footer">
+        <div class="footer-cta reveal">
+            <p>Vous avez un projet ou une idée spécifique en tête ?</p>
+            <a href="soumission.html" class="btn-premium hover-lift">DEMANDER UN DEVIS</a>
+        </div>
+        <div class="footer-content" style="margin-top: 50px;">
+            <p>© 2026 MICHAEL DEMERS | QUÉBEC</p>
+        </div>
     </footer>
 
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
