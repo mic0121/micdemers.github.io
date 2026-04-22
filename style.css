@@ -396,3 +396,87 @@ hr {
     font-weight: bold !important;
     text-decoration: none !important;
 }
+/* --- Page About Spécifique --- */
+.page-about {
+    background-color: #000;
+    color: #fff;
+    padding-top: 100px; /* Espace pour le header fixe */
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image-wrapper {
+    position: relative;
+    padding: 20px;
+}
+
+.about-portrait {
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    z-index: 2;
+    filter: grayscale(30%);
+    transition: filter 0.5s ease;
+}
+
+.about-portrait:hover {
+    filter: grayscale(0%);
+}
+
+/* Décoration dorée derrière l'image */
+.gold-border-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 80%;
+    border: 2px solid #d4af37;
+    z-index: 1;
+    transform: translate(-10px, -10px);
+}
+
+.about-lead {
+    font-size: 1.4rem;
+    color: #d4af37;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.about-text-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.about-cta {
+    margin-top: 40px;
+}
+
+/* Responsive Mobile */
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .about-text-content h1 {
+        text-align: center !important;
+    }
+    
+    .gold-divider {
+        margin: 0 auto 30px auto !important;
+    }
+}
