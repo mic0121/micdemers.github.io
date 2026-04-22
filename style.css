@@ -69,7 +69,7 @@ header {
 .nav-left {
     display: flex !important;
     align-items: center !important;
-    padding-top: 10px !important; /* Ajuste ce chiffre (10px, 15px...) pour descendre le logo */
+    padding-top: 15px !important; /* Ajuste ce chiffre (10px, 15px...) pour descendre le logo */
 }
 
 .logo img {
@@ -114,7 +114,7 @@ header {
     display: flex !important;
     gap: 15px !important;
     align-items: center !important;
-    margin-bottom: 5px !important; /* Ajuste ce chiffre pour les remonter subtilement si besoin */
+    margin-bottom: 10px !important; /* Ajuste ce chiffre pour les remonter subtilement si besoin */
 }
 .nav-socials-top a {
     color: #fff !important;
