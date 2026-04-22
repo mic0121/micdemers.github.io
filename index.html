@@ -133,19 +133,21 @@
     const navMenu = document.getElementById('nav-menu');
 
     if (hamburger && navMenu) {
-        hamburger.onclick = () => {
+        hamburger.addEventListener('click', () => {
+            // Ajoute/Enlève la classe 'active' pour afficher le menu
             navMenu.classList.toggle('active');
+            // Ajoute une animation au hamburger lui-même (si tu as le CSS pour)
             hamburger.classList.toggle('toggle');
-        };
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('visible');
         });
-    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        // Ferme le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('toggle');
+            });
+        });
+    }
 </script>
 </body>
 </html>
