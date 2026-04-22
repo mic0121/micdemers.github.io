@@ -190,3 +190,23 @@ header {
     min-width: 250px; /* Pour un look imposant */
     padding: 20px 40px !important;
 }
+/* Ajustements pour mobile */
+@media (max-width: 768px) {
+    /* Cache le logo sur mobile pour épurer le header */
+    .logo {
+        display: none !important;
+    }
+
+    .contact-title { 
+        font-size: 2.2rem !important; 
+        letter-spacing: 3px !important;
+    }
+
+    .contact-header { 
+        padding-top: 120px !important; /* On remonte un peu le texte puisqu'il n'y a plus de logo */
+    }
+
+    .contact-subtitle {
+        font-size: 1.1rem !important;
+    }
+}
