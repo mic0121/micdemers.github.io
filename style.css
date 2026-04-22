@@ -15,13 +15,17 @@ body {
 }
 
 /* --- ANIMATIONS --- */
-.reveal { opacity: 0; transform: translateY(30px); transition: 1s ease-out; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+/* On garde le mouvement, mais on enlève le flou par défaut */
 .reveal {
     opacity: 0;
-    filter: blur(10px); /* Ajoute un flou mystérieux */
     transform: translateY(30px);
-    transition: all 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    transition: all 0.8s ease-out; /* Plus rapide pour éviter l'effet "traînante" */
+    filter: blur(0px) !important; /* On force la netteté ici */
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0px);
 }
 
 .reveal.active {
