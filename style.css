@@ -57,26 +57,27 @@ header {
 }
 .navbar {
     display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important; /* Aligne le logo, le menu et les icônes sur la même ligne */
-    height: 100px !important;       /* On donne de la hauteur pour le gros logo */
+    flex-direction: row !important; /* Force la ligne droite */
+    justify-content: space-between !important; /* Pousse les blocs aux extrémités */
+    align-items: center !important; /* Aligne les milieux verticalement */
+    height: 120px !important;
     padding: 0 50px !important;
-    background: transparent !important;
-    position: relative;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 /* GAUCHE : Logo */
 .nav-left {
-    flex: 1;
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
+    flex: 1 !important; /* Prend l'espace de gauche sans écraser le reste */
+    width: auto !important; /* Empêche de prendre 100% */
 }
 
 .logo img {
-    height: 65px !important; /* Ta taille préférée */
+    height: 85px !important; /* Ta taille cible */
     width: auto !important;
-    display: block;
+    display: block !important;
 }
-
 /* CENTRE : Menu */
 .nav-center-links {
     flex: 2;
@@ -106,13 +107,16 @@ header {
 /* DROITE : Réseaux */
 .nav-right-actions {
     display: flex !important;
-    align-items: center !important; /* Aligne les icônes avec le reste */
+    justify-content: flex-end !important; /* Colle les icônes à droite */
+    align-items: center !important;
+    flex: 1 !important;
 }
 
 .nav-socials-top {
     display: flex !important;
+    flex-direction: row !important; /* INDISPENSABLE : force les icônes côte à côte */
     gap: 15px !important;
-    align-items: center !important;
+    width: auto !important;
 }
 .nav-socials-top a {
     color: #fff !important;
