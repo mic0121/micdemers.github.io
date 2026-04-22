@@ -89,7 +89,12 @@ body {
 .services-section {
     padding: 100px 5%;
 }
-
+.section-title {
+    text-align: center !important; /* Force le centrage du texte */
+    width: 100% !important;        /* S'assure que le titre prend toute la largeur */
+    margin: 0 auto 40px auto !important; /* Centre le bloc lui-même et ajoute de l'espace en bas */
+    display: block !important;
+}
 .cards {
     margin-bottom: 100px; /* Espace après les cartes */
 }
