@@ -208,3 +208,39 @@ h2 {
     70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
 }
+/* Nettoyage de la section Services */
+.services-section {
+    display: block !important;
+    position: relative !important;
+    padding: 80px 5% !important;
+    margin-bottom: 50px !important;
+    clear: both;
+}
+
+/* Force les cartes à s'empiler correctement (ou à être en ligne) */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+/* Style du bouton "Vérifier les disponibilités" */
+.cta-section-gold a, 
+.btn-gold-final {
+    display: inline-block !important;
+    background: linear-gradient(135deg, #e5c06d 0%, #d4af37 50%, #b8860b 100%) !important;
+    color: #000 !important;
+    padding: 18px 35px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    border-radius: 5px !important;
+    text-transform: uppercase !important;
+    transition: all 0.3s ease !important;
+    margin-top: 25px !important;
+}
+
+.cta-section-gold a:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6) !important;
+}
