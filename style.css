@@ -680,3 +680,26 @@ hr {
         display: none !important;
     }
 }
+.social-proof-section {
+    padding: 60px 20px;
+    background: #000; /* Fond noir profond */
+    text-align: center;
+}
+
+.signature-text {
+    color: #fff;
+    font-size: 1.8rem; /* Grand mais élégant */
+    font-weight: 300; /* Plus fin pour le côté luxe */
+    font-family: 'Playfair Display', serif; /* Ou une police élégante que tu utilises */
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.4;
+    letter-spacing: 1px;
+}
+
+.gold-text {
+    color: #d4af37;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-style: italic;
+}
