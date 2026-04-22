@@ -67,7 +67,24 @@
             .contact-title { font-size: 2rem; }
             .contact-header { padding-top: 140px; }
         }
-    </style>
+        /* --- FIX LOGO MOBILE --- */
+@media (max-width: 768px) {
+    header .logo, 
+    header .nav-left img, 
+    .logo a img {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+    }
+
+    /* On s'assure que le menu hamburger reste visible et bien placé */
+    .nav-left {
+        display: flex !important;
+        width: auto !important;
+    }
+}
+</style>
 </head>
 <body>
 
