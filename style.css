@@ -244,3 +244,27 @@ h2 {
     transform: scale(1.05) !important;
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.6) !important;
 }
+/* Empêche les images de s'écraser */
+.services-section img, 
+.card img {
+    width: 100% !important;
+    height: 300px !important; /* Ajuste la hauteur selon ton design */
+    object-fit: cover !important; /* Découpe l'image proprement au lieu de l'écraser */
+    display: block;
+}
+/* Réduction de l'espace entre les blocs */
+.cta-section-gold {
+    padding-top: 40px !important;   /* Réduit l'espace en haut du bouton */
+    padding-bottom: 40px !important; /* Réduit l'espace sous le bouton */
+    margin: 0 !important;
+}
+
+#infolettre {
+    margin-top: 0 !important;      /* Supprime la marge du haut de l'infolettre */
+    padding-top: 40px !important;  /* Garde juste un petit espace interne */
+}
+
+/* Si tu as une ligne de séparation (HR) qui crée de l'espace */
+hr {
+    margin: 20px 0 !important;
+}
