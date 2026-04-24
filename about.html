@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Artiste | Michael Demers</title>
+    <title>L'Artiste | Michael Demers — Mentaliste à Québec</title>
+    <meta name="description" content="Découvrez Michael Demers, mentaliste professionnel à Québec spécialisé dans le divertissement haut de gamme pour événements corporatifs et galas de prestige.">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -20,7 +21,7 @@
         .about-hero {
             height: 60vh; /* Hauteur de la photo */
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), 
-                        url('images/IMG_6513.JPG') center/cover no-repeat; /* CHANGE ICI LE NOM DE TA PHOTO */
+                        url('images/IMG_6513.JPG') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -95,7 +96,7 @@
         <div class="nav-left">
             <div class="logo">
                 <a href="index.html">
-                    <img src="images/logo.PNG" alt="Michael Demers Logo" style="height: 70px; width: auto;">
+                    <img src="images/logo.PNG" alt="Michael Demers — Mentaliste Québec" style="height: 70px; width: auto;">
                 </a>
             </div>
             <div class="hamburger" id="hamburger">
@@ -130,18 +131,18 @@
 <main class="about-content">
     <div class="about-text">
         <p>
-            Basé à Québec, Michael Demers redéfinit l'art de l'impossible. Spécialisé dans le mentalisme haut de gamme, il transforme chaque événement en une expérience psychologique immersive où la réalité semble se plier à sa volonté.
+            Basé à <strong>Québec</strong>, Michael Demers redéfinit le divertissement événementiel en fusionnant psychologie, influence et intuition. Spécialisé dans le <strong>mentalisme corporatif haut de gamme</strong>, il transforme chaque événement en une expérience immersive où les frontières de la perception humaine sont repoussées.
         </p>
         
         <span class="quote-gold">"L'élégance du mystère, la précision de l'esprit."</span>
         
         <p>
-            Que ce soit pour des galas corporatifs ou des événements privés exclusifs, son approche allie charisme, psychologie et une maîtrise technique qui laisse les spectateurs les plus sceptiques sans voix. Plus qu'une performance, c'est un voyage aux frontières de la perception humaine.
+            Que ce soit pour un cocktail réseautage de prestige, un gala ou un événement privé exclusif, son approche allie charisme et une maîtrise technique qui laisse les spectateurs les plus exigeants sans voix. Plus qu'une simple animation, Michael propose une signature artistique unique conçue pour marquer durablement l'imaginaire de vos invités et élever le standing de vos réceptions.
         </p>
     </div>
 
     <div style="margin-top: 60px;">
-        <a href="soumission.html" class="btn-premium" style="text-decoration: none; padding: 15px 40px; border: 1px solid #D4AF37; color: #D4AF37; letter-spacing: 2px; font-weight: bold; text-transform: uppercase;">Contacter</a>
+        <a href="soumission.html" class="btn-premium" style="text-decoration: none; padding: 15px 40px; border: 2px solid #D4AF37; color: #D4AF37; letter-spacing: 2px; font-weight: bold; text-transform: uppercase; transition: 0.3s;">Obtenir une soumission</a>
     </div>
 </main>
 
@@ -158,7 +159,6 @@
         navMenu.classList.toggle('active');
     });
 
-    // Fermer le menu quand on clique sur un lien
     document.querySelectorAll('.nav-links li a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
